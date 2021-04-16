@@ -9,7 +9,7 @@ class AttendancePage extends StatelessWidget {
       ),
       body: Center(
         child: Text(
-          'Ye Bhi Bana Do',
+          'Attendance',
           style: TextStyle(
             fontSize: 50.0,
           ),

@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iiit_skeleton/screens/Faculty.dart';
 import 'package:iiit_skeleton/screens/attendance_page.dart';
-import 'package:iiit_skeleton/screens/login_page_home.dart';
+import 'package:iiit_skeleton/screens/news.dart';
 import 'about_page.dart';
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:iiit_skeleton/homepage/slider.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -20,45 +23,10 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-    ),
-    Text(
-      'Index 1: Email',
-    ),
-    Text(
-      'Index 2: Message',
-    ),
-  ];
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
-            label: 'Account',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.email),
-            label: 'Email',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.message),
-            label: 'Message',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-      ),
+      backgroundColor: Color(0xFFF4F9F9),
       drawer: Drawer(
         child: ListView(
           children: [
@@ -92,31 +60,123 @@ class _MyAppState extends State<MyApp> {
                 );
               },
             ),
-          ],
-        ),
-      ),
-      appBar: AppBar(
-        actions: [
-          IconButton(
-              icon: Icon(Icons.clear),
-              onPressed: () {
+            ListTile(
+              title: Text('Faculty'),
+              onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoginPage(),
+                    builder: (context) => AttendancePage(),
                   ),
                 );
-              }),
-          SizedBox(
-            width: 15.0,
-          ),
-        ],
-        centerTitle: true,
-        title: Text(
-          'APPBAR',
+              },
+            ),
+          ],
         ),
       ),
-      body: Center(child: _widgetOptions[_selectedIndex]),
+      body: SafeArea(
+        child: Container(
+          child: Column(
+            children: [
+              Container(
+                margin: EdgeInsets.all(15.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          height: 5.0,
+                        ),
+                        Text(
+                          "Welcome,",
+                          textAlign: TextAlign.left,
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontFamily: 'Ubuntu',
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                        Text(
+                          "Aditya Chaudhary",
+                          style: TextStyle(
+                            textBaseline: TextBaseline.alphabetic,
+                            fontSize: 25.0,
+                            fontFamily: 'Ubuntu',
+                            fontWeight: FontWeight.w900,
+                          ),
+                        ),
+                      ],
+                    ),
+                    CircleAvatar(
+                      radius: 35.0,
+                      backgroundImage: AssetImage('images/1.png'),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                height: 200.0,
+                child: Column(
+                  children: [
+                    CarouselSlider(
+                      items: [
+                        CarouselChild(
+                          address: 'images/l.png',
+                          onPress: () {
+                            setState(() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LatestNewsPage(),
+                                ),
+                              );
+                            });
+                          },
+                        ),
+                        CarouselChild(
+                          address: 'images/8.jpg',
+                          onPress: () {
+                            setState(() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AboutPage(),
+                                ),
+                              );
+                            });
+                          },
+                        ),
+                        CarouselChild(
+                          address: 'images/10.png',
+                          onPress: () {
+                            setState(() {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FacultyPage(),
+                                ),
+                              );
+                            });
+                          },
+                        ),
+                      ],
+                      options: CarouselOptions(
+                        enlargeCenterPage: true,
+                        height: 180.0,
+                        aspectRatio: 16 / 9,
+                        enableInfiniteScroll: true,
+                        viewportFraction: 0.8,
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
