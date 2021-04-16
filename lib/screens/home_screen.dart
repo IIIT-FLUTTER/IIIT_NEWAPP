@@ -5,7 +5,7 @@ import 'package:iiit_skeleton/screens/attendance_page.dart';
 import 'package:iiit_skeleton/screens/news.dart';
 import 'about_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:iiit_skeleton/homepage/slider.dart';
+import 'package:iiit_skeleton/widgets/slider.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -23,6 +23,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _selectedIndex = 0;
+  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,19 +80,23 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.all(15.0),
+                margin: EdgeInsets.only(right: 10, top: 05.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    IconButton(
+                        icon: Icon(Icons.sort),
+                        onPressed: () {
+                          _scaffoldKey.currentState.openDrawer();
+                        }),
                     Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
                           height: 5.0,
                         ),
                         Text(
                           "Welcome,",
-                          textAlign: TextAlign.left,
                           style: TextStyle(
                             fontSize: 20.0,
                             fontFamily: 'Ubuntu',
