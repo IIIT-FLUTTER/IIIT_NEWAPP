@@ -190,7 +190,7 @@ class _MyAppState extends State<MyApp> {
                   children: <Widget>[
                     Container(
                       padding: const EdgeInsets.all(8),
-                      child: const Text("Hed have you all unravel at the"),
+                      child: const Text("He'd have you all unravel at the"),
                       color: Colors.teal[100],
                     ),
                     Container(
