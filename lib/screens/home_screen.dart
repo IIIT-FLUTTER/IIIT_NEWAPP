@@ -27,6 +27,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Color(0xFFF4F9F9),
       drawer: Drawer(
         child: ListView(
@@ -80,7 +81,7 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               Container(
-                margin: EdgeInsets.only(right: 10, top: 05.0),
+                margin: EdgeInsets.only(top: 05.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -178,6 +179,48 @@ class _MyAppState extends State<MyApp> {
                   ],
                 ),
               ),
+              Container(
+                height: 300.0,
+                child: GridView.count(
+                  primary: false,
+                  padding: const EdgeInsets.all(20),
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  crossAxisCount: 3,
+                  children: <Widget>[
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const Text("He'd have you all unravel at the"),
+                      color: Colors.teal[100],
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const Text('Heed not the rabble'),
+                      color: Colors.teal[200],
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const Text('Sound of screams but the'),
+                      color: Colors.teal[300],
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const Text('Who scream'),
+                      color: Colors.teal[400],
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const Text('Revolution is coming...'),
+                      color: Colors.teal[500],
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(8),
+                      child: const Text('Revolution, they...'),
+                      color: Colors.teal[600],
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),
