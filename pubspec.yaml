@@ -56,6 +56,9 @@ flutter:
    - images/9.jpg
    - images/10.png
    - images/l.png
+   - images/Login_Page/IIIT Sonepat Logo.png
+   - images/Login_Page/google.png
+   - images/Login_Page/Back.jpeg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
