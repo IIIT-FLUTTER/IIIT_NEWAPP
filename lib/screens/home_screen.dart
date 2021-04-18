@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iiit_skeleton/models/constants.dart';
 import 'package:iiit_skeleton/screens/Faculty.dart';
 import 'package:iiit_skeleton/screens/attendance_page.dart';
 import 'package:iiit_skeleton/screens/news.dart';
+import 'package:iiit_skeleton/widgets/subjectIcon.dart';
 import 'about_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:iiit_skeleton/widgets/slider.dart';
@@ -16,72 +18,68 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  int _selectedIndex = 0;
-  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
+class MyApp extends StatelessWidget {
+  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: _scaffoldKey,
-      backgroundColor: Color(0xFFF4F9F9),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            DrawerHeader(
-              child: Center(
-                child: Text('IIIT SONEPAT'),
+    SizeConfig().init(context);
+    return SafeArea(
+      child: Scaffold(
+        key: _scaffoldKey,
+        backgroundColor: Color(0xFFF4F9F9),
+        drawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Center(
+                  child: Text('IIIT SONEPAT'),
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
               ),
-              decoration: BoxDecoration(
-                color: Colors.blue,
+              ListTile(
+                title: Text('About'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AboutPage(),
+                    ),
+                  );
+                },
               ),
-            ),
-            ListTile(
-              title: Text('About'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AboutPage(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('Attendance'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AttendancePage(),
-                  ),
-                );
-              },
-            ),
-            ListTile(
-              title: Text('Faculty'),
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AttendancePage(),
-                  ),
-                );
-              },
-            ),
-          ],
+              ListTile(
+                title: Text('Attendance'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AttendancePage(),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Faculty'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AttendancePage(),
+                    ),
+                  );
+                },
+              ),
+            ],
+          ),
         ),
-      ),
-      body: SafeArea(
-        child: Container(
+        body: Container(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 05.0),
+                margin: EdgeInsets.only(top: 5.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -94,7 +92,7 @@ class _MyAppState extends State<MyApp> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         SizedBox(
-                          height: 5.0,
+                          height: SizeConfig.blockSizeVertical * 2.0,
                         ),
                         Text(
                           "Welcome,",
@@ -116,61 +114,63 @@ class _MyAppState extends State<MyApp> {
                       ],
                     ),
                     CircleAvatar(
-                      radius: 35.0,
+                      radius: 30.0,
                       backgroundImage: AssetImage('images/1.png'),
                     ),
                   ],
                 ),
               ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical * 4.0,
+              ),
               Container(
-                height: 200.0,
+                height: SizeConfig.blockSizeVertical * 28.0,
                 child: Column(
                   children: [
+                    SizedBox(
+                      height: 2.0,
+                    ),
                     CarouselSlider(
                       items: [
                         CarouselChild(
-                          address: 'images/l.png',
+                          address: 'images/b.png',
                           onPress: () {
-                            setState(() {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => LatestNewsPage(),
-                                ),
-                              );
-                            });
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LatestNewsPage(),
+                              ),
+                            );
                           },
                         ),
                         CarouselChild(
-                          address: 'images/8.jpg',
+                          address: 'images/c.png',
                           onPress: () {
-                            setState(() {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => AboutPage(),
-                                ),
-                              );
-                            });
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => AboutPage(),
+                              ),
+                            );
                           },
                         ),
                         CarouselChild(
-                          address: 'images/10.png',
+                          address: 'images/d.jpg',
                           onPress: () {
-                            setState(() {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => FacultyPage(),
-                                ),
-                              );
-                            });
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => FacultyPage(),
+                              ),
+                            );
                           },
                         ),
                       ],
                       options: CarouselOptions(
+                        autoPlay: true,
+                        autoPlayInterval: Duration(seconds: 2),
                         enlargeCenterPage: true,
-                        height: 180.0,
+                        height: SizeConfig.blockSizeVertical * 27.0,
                         aspectRatio: 16 / 9,
                         enableInfiniteScroll: true,
                         viewportFraction: 0.8,
@@ -179,44 +179,55 @@ class _MyAppState extends State<MyApp> {
                   ],
                 ),
               ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical * 4.0,
+              ),
               Container(
-                height: 300.0,
+                alignment: Alignment.center,
+                child: Text(
+                  'My Subjects',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: SizeConfig.blockSizeVertical * 3.0,
+                    fontFamily: 'Ubuntu',
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: SizeConfig.blockSizeVertical * 2.5,
+              ),
+              Container(
+                height: SizeConfig.blockSizeVertical * 43.0,
                 child: GridView.count(
                   primary: false,
-                  padding: const EdgeInsets.all(20),
-                  crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
+                  childAspectRatio: MediaQuery.of(context).size.height / 690,
                   crossAxisCount: 3,
+                  mainAxisSpacing: 10,
                   children: <Widget>[
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text("He'd have you all unravel at the"),
-                      color: Colors.teal[100],
+                    Subject(
+                      address: 'images/m.png',
+                      subjectName: 'Mathematics',
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text('Heed not the rabble'),
-                      color: Colors.teal[200],
+                    Subject(
+                      address: 'images/wd.png',
+                      subjectName: 'Web Designing',
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text('Sound of screams but the'),
-                      color: Colors.teal[300],
+                    Subject(
+                      address: 'images/cs.png',
+                      subjectName: 'Communication Skills',
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text('Who scream'),
-                      color: Colors.teal[400],
+                    Subject(
+                      address: 'images/ds.png',
+                      subjectName: 'Data Structure',
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text('Revolution is coming...'),
-                      color: Colors.teal[500],
+                    Subject(
+                      address: 'images/de.png',
+                      subjectName: 'Digital Electronics',
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(8),
-                      child: const Text('Revolution, they...'),
-                      color: Colors.teal[600],
+                    Subject(
+                      address: 'images/ad.png',
+                      subjectName: 'Application Programming',
                     ),
                   ],
                 ),
