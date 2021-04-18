@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iiit_skeleton/screens/home_screen.dart';
 
 class LatestNewsPage extends StatelessWidget {
   @override
