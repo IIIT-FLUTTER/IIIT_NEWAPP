@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:iiit_skeleton/Login_Page/Horizontal%20Line.dart';
 import 'package:iiit_skeleton/screens/home_screen.dart';
 
 class LoginPage extends StatelessWidget {
   final _scaffoldKey = GlobalKey<ScaffoldState>();
-  TextEditingController emailController = new TextEditingController();
-  TextEditingController passwordController = new TextEditingController();
+  final TextEditingController emailController = new TextEditingController();
+  final TextEditingController passwordController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,10 +14,10 @@ class LoginPage extends StatelessWidget {
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("images/Login_Page/Back.jpeg"),
+            image: AssetImage("images/Login_Page/back.png"),
             fit: BoxFit.cover,
             colorFilter: ColorFilter.mode(
-                Colors.transparent.withOpacity(0.3), BlendMode.srcOver),
+                Colors.transparent.withOpacity(0.1), BlendMode.srcOver),
           ),
         ),
         alignment: Alignment.center,
@@ -68,19 +67,22 @@ class LoginPage extends StatelessWidget {
                           TextField(
                             controller: emailController,
                             keyboardType: TextInputType.emailAddress,
-                            style: TextStyle(color: Colors.deepOrange),
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
                             decoration: InputDecoration(
                               hintText: "name.rollno@iiitsonepat.ac.in",
-                              fillColor: Colors.orange,
+                              fillColor: Colors.black,
                               prefixIcon: Icon(
                                 Icons.mail_outline,
                                 size: 25.0,
                                 color: Colors.blueAccent,
                               ),
                               hintStyle: TextStyle(
+                                color: Colors.grey,
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.w900,
-                                fontStyle: FontStyle.normal,
+                                fontStyle: FontStyle.italic,
                               ),
                             ),
                           ),
@@ -89,10 +91,11 @@ class LoginPage extends StatelessWidget {
                             obscureText: true,
                             style: TextStyle(
                               color: Colors.black87,
+                              fontWeight: FontWeight.bold,
                               fontSize: 19.0,
                             ),
                             decoration: InputDecoration(
-                              hintText: "********",
+                              hintText: "Enter your password",
                               prefixIcon: Icon(
                                 Icons.lock,
                                 size: 25.0,
@@ -104,9 +107,10 @@ class LoginPage extends StatelessWidget {
                                 color: Colors.blueAccent,
                               ),
                               hintStyle: TextStyle(
+                                color: Colors.grey,
                                 fontSize: 16.0,
                                 fontWeight: FontWeight.w900,
-                                fontStyle: FontStyle.normal,
+                                fontStyle: FontStyle.italic,
                               ),
                             ),
                           ),

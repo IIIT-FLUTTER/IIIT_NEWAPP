@@ -22,6 +22,8 @@ class MyApp extends StatelessWidget {
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
@@ -75,6 +77,14 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: Container(
+          // decoration: BoxDecoration(
+          //   image: DecorationImage(
+          //     image: AssetImage("images/newback.jpg"),
+          //     fit: BoxFit.cover,
+          //     colorFilter: ColorFilter.mode(
+          //         Colors.transparent.withOpacity(0.3), BlendMode.srcOver),
+          //   ),
+          // ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -180,7 +190,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: SizeConfig.blockSizeVertical * 4.0,
+                height: SizeConfig.blockSizeVertical * 3.9,
               ),
               Container(
                 alignment: Alignment.center,
@@ -201,7 +211,7 @@ class MyApp extends StatelessWidget {
                 height: SizeConfig.blockSizeVertical * 43.0,
                 child: GridView.count(
                   primary: false,
-                  childAspectRatio: MediaQuery.of(context).size.height / 690,
+                  childAspectRatio: width / (height / 2),
                   crossAxisCount: 3,
                   mainAxisSpacing: 10,
                   children: <Widget>[

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:iiit_skeleton/models/constants.dart';
 
 class Subject extends StatelessWidget {
   Subject({this.address, this.subjectName, this.onPress});
@@ -13,18 +12,22 @@ class Subject extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(8),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             CircleAvatar(
-              radius: SizeConfig.blockSizeVertical * 6.0,
+              radius: 40,
               backgroundImage: AssetImage(address),
             ),
-            Text(
-              subjectName,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize: 15.0,
-                fontFamily: 'Ubuntu',
-                fontWeight: FontWeight.bold,
+            Flexible(
+              child: Text(
+                subjectName,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15.0,
+                  fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             )
           ],
