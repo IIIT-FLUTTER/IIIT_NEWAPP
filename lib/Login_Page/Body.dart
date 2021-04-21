@@ -14,6 +14,8 @@ class LoginPage extends StatelessWidget {
   final TextEditingController rollController = new TextEditingController();
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery.of(context).size.width;
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: Colors.white,
@@ -59,7 +61,7 @@ class LoginPage extends StatelessWidget {
                         "Sign In",
                         style: TextStyle(
                           fontSize: 25.0,
-                          color: Colors.teal.shade200,
+                          color: Colors.white,
                           fontWeight: FontWeight.w900,
                         ),
                       ),
@@ -79,7 +81,7 @@ class LoginPage extends StatelessWidget {
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              textmain(
+                              TextMain(
                                   emailController,
                                   false,
                                   Colors.black,
@@ -93,7 +95,7 @@ class LoginPage extends StatelessWidget {
                               SizedBox(
                                 height: 9.0,
                               ),
-                              textmain(
+                              TextMain(
                                   passwordController,
                                   true,
                                   Colors.black,
@@ -108,10 +110,13 @@ class LoginPage extends StatelessWidget {
                           ),
                         ),
                       ),
+                      SizedBox(
+                        height: height / 15,
+                      ),
                       Center(
                         child: RaisedButton(
                           elevation: 6.0,
-                          color: Colors.green,
+                          color: Colors.blueAccent,
                           child: Text(
                             "LogIn",
                             style: TextStyle(
@@ -138,7 +143,7 @@ class LoginPage extends StatelessWidget {
                                       style: TextStyle(
                                         fontSize: 15.0,
                                         fontWeight: FontWeight.w900,
-                                        color: Colors.red,
+                                        color: Colors.black,
                                       ),
                                     ),
                                     backgroundColor: Colors.white70,
@@ -164,7 +169,7 @@ class LoginPage extends StatelessWidget {
                                 child: Text(
                                   "Forgot Password?",
                                   style: TextStyle(
-                                    color: Colors.red,
+                                    color: Colors.deepOrangeAccent,
                                     fontWeight: FontWeight.w900,
                                   ),
                                 ),
@@ -181,69 +186,8 @@ class LoginPage extends StatelessWidget {
                                   );
                                 }),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              "Or Login With",
-                              style: TextStyle(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.w900,
-                                color: Colors.yellow,
-                              ),
-                            ),
-                          ),
                         ],
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 25.0,
-                          vertical: 8.0,
-                        ),
-                        child: Container(
-                          height: 1.0,
-                          color: Colors.amber.shade900,
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          FlatButton(
-                            child: Image.asset(
-                              "images/Login_Page/google.png",
-                              fit: BoxFit.cover,
-                              width: 30.0,
-                              height: 30.0,
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => HomeScreen(),
-                                ),
-                              );
-                            },
-                          ),
-                          FlatButton(
-                            child: Container(
-                              height: 50,
-                              width: 30,
-                              child: Icon(
-                                Icons.mail,
-                                size: 40,
-                                color: Colors.blueAccent,
-                              ),
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => HomeScreen(),
-                                ),
-                              );
-                            },
-                          ),
-                        ],
-                      )
                     ],
                   ),
                 ),
@@ -259,13 +203,13 @@ class LoginPage extends StatelessWidget {
     return new Container(
       decoration: new BoxDecoration(
         image: new DecorationImage(
-          image: new AssetImage('images/Login_Page/Back.jpeg'),
+          image: new AssetImage('images/hupe.gif'),
           fit: BoxFit.cover,
         ),
       ),
       //I blured the parent container to blur background image, you can get rid of this part
       child: new BackdropFilter(
-        filter: new ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+        filter: new ui.ImageFilter.blur(sigmaX: 3.0, sigmaY: 3.0),
         child: new Container(
           //you can change opacity with color here(I used black) for background.
           decoration: new BoxDecoration(color: Colors.black.withOpacity(0.2)),

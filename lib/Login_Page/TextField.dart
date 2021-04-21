@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class textmain extends StatelessWidget {
+class TextMain extends StatelessWidget {
   final TextEditingController controller;
   final bool obscure;
   final Color color;
@@ -12,7 +12,7 @@ class textmain extends StatelessWidget {
   final TextInputType input;
   final String label;
 
-  textmain(this.controller, this.obscure, this.color, this.fw, this.fontsize,
+  TextMain(this.controller, this.obscure, this.color, this.fw, this.fontsize,
       this.prefix, this.suffix, this.hint, this.input, this.label);
 
   @override
@@ -29,9 +29,10 @@ class textmain extends StatelessWidget {
       decoration: InputDecoration(
         labelText: label,
         labelStyle: TextStyle(
+          fontFamily: 'Questrial',
           fontSize: 17.0,
-          fontWeight: FontWeight.bold,
-          color: Colors.red,
+          letterSpacing: 1.5,
+          color: Colors.black,
         ),
         border: const OutlineInputBorder(
           gapPadding: 10.0,

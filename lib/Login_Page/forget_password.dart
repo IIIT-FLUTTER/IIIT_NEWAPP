@@ -29,7 +29,7 @@ class Forget_Password extends StatelessWidget {
               ),
               child: Column(
                 children: <Widget>[
-                  textmain(
+                  TextMain(
                       controllerRoll,
                       false,
                       Colors.black,
@@ -43,7 +43,7 @@ class Forget_Password extends StatelessWidget {
                   SizedBox(
                     height: 9.0,
                   ),
-                  textmain(
+                  TextMain(
                       controllerName,
                       false,
                       Colors.black,
@@ -124,7 +124,7 @@ class Forget_Password extends StatelessWidget {
               ),
               child: Column(
                 children: <Widget>[
-                  textmain(
+                  TextMain(
                       controllerPhone,
                       false,
                       Colors.black,
