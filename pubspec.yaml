@@ -84,6 +84,9 @@ flutter:
   #         style: italic
   #   - family: Trajan Pro
   fonts:
+    - family: MonoLisa
+      fonts:
+        - asset: fonts/MonoLisa-Regular.ttf
     - family: Questrial
       fonts:
         - asset: fonts/Questrial-Regular.ttf
