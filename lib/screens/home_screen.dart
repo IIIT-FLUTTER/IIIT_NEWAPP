@@ -94,6 +94,7 @@ class MyApp extends StatelessWidget {
                   children: [
                     IconButton(
                         icon: Icon(Icons.sort),
+                        color: Colors.white,
                         onPressed: () {
                           _scaffoldKey.currentState.openDrawer();
                         }),
