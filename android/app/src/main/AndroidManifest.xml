@@ -1,8 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.iiit_skeleton">
+    package="com.example.iiit_skeleton"
+xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
-        android:label="iiit_skeleton"
-        android:icon="@mipmap/ic_launcher">
+       android:icon="@mipmap/ic_launcher"
+       android:label="iiit_skeleton"
+       tools:replace="android:label">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

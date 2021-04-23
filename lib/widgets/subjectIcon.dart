@@ -19,35 +19,15 @@ class Subject extends StatelessWidget {
               backgroundImage: AssetImage(address),
             ),
             Flexible(
-              child: Stack(
-                children: [
-                  Text(
-                    subjectName,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15.0,
-                      fontFamily: 'Ubuntu',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50.0,
-                  ),
-                  Text(
-                    subjectName,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      foreground: Paint()
-                        ..style = PaintingStyle.stroke
-                        ..strokeWidth = 0.2
-                        ..color = Colors.black,
-                      fontSize: 15.0,
-                      fontFamily: 'Ubuntu',
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+              child: Text(
+                subjectName,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15.0,
+                  fontFamily: 'Ubuntu',
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             )
           ],

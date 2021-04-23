@@ -12,7 +12,6 @@ class LoginPage extends StatelessWidget {
   final TextEditingController phoneController = new TextEditingController();
   final TextEditingController nameController = new TextEditingController();
   final TextEditingController rollController = new TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -83,32 +82,30 @@ class LoginPage extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
                               TextMain(
-                                controller: emailController,
-                                obscure: false,
-                                color: Colors.black,
-                                fw: FontWeight.bold,
-                                fontsize: 15.0,
-                                prefix: Icons.mail_outline,
-                                suffix: null,
-                                hint: "name.rollno@iiitsonepat.ac.in",
-                                input: TextInputType.emailAddress,
-                                label: "Email Address",
-                              ),
+                                  emailController,
+                                  false,
+                                  Colors.black,
+                                  FontWeight.bold,
+                                  15.0,
+                                  Icons.mail_outline,
+                                  null,
+                                  "name.rollno@iiitsonepat.ac.in",
+                                  TextInputType.emailAddress,
+                                  "Email Address"),
                               SizedBox(
                                 height: 9.0,
                               ),
                               TextMain(
-                                controller: passwordController,
-                                obscure: true,
-                                color: Colors.black,
-                                fw: FontWeight.bold,
-                                fontsize: 15.0,
-                                prefix: Icons.lock_outline_rounded,
-                                suffix: Icons.visibility,
-                                hint: "Enter your password",
-                                input: null,
-                                label: "Password",
-                              ),
+                                  passwordController,
+                                  true,
+                                  Colors.black,
+                                  FontWeight.bold,
+                                  15.0,
+                                  Icons.lock_outline_rounded,
+                                  Icons.visibility,
+                                  "Enter your password",
+                                  null,
+                                  "Password"),
                             ],
                           ),
                         ),
@@ -119,7 +116,7 @@ class LoginPage extends StatelessWidget {
                       Center(
                         child: RaisedButton(
                           elevation: 6.0,
-                          color: Color(0xFF76A3E7),
+                          color: Colors.blueAccent,
                           child: Text(
                             "LogIn",
                             style: TextStyle(
