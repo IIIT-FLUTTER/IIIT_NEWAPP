@@ -12,8 +12,8 @@ class TextMain extends StatelessWidget {
   final TextInputType input;
   final String label;
 
-  TextMain(this.controller, this.obscure, this.color, this.fw, this.fontsize,
-      this.prefix, this.suffix, this.hint, this.input, this.label);
+  TextMain({this.controller, this.obscure, this.color, this.fw, this.fontsize,
+      this.prefix, this.suffix, this.hint, this.input, this.label});
 
   @override
   Widget build(BuildContext context) {
