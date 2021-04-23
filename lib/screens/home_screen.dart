@@ -28,7 +28,6 @@ class MyApp extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,
-        backgroundColor: Color(0xFFF4F9F9),
         drawer: Drawer(
           child: ListView(
             children: [
@@ -68,7 +67,7 @@ class MyApp extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => AttendancePage(),
+                      builder: (context) => FacultyPage(),
                     ),
                   );
                 },
@@ -77,14 +76,14 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: Container(
-          // decoration: BoxDecoration(
-          //   image: DecorationImage(
-          //     image: AssetImage("images/newback.jpg"),
-          //     fit: BoxFit.cover,
-          //     colorFilter: ColorFilter.mode(
-          //         Colors.transparent.withOpacity(0.3), BlendMode.srcOver),
-          //   ),
-          // ),
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/backs1.gif"),
+              fit: BoxFit.cover,
+              colorFilter: ColorFilter.mode(
+                  Colors.transparent.withOpacity(0.3), BlendMode.srcOver),
+            ),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -104,23 +103,56 @@ class MyApp extends StatelessWidget {
                         SizedBox(
                           height: SizeConfig.blockSizeVertical * 2.0,
                         ),
-                        Text(
-                          "Welcome,",
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontFamily: 'Ubuntu',
-                            fontWeight: FontWeight.w300,
-                          ),
+                        Stack(
+                          children: [
+                            Text(
+                              "Welcome,",
+                              style: TextStyle(
+                                foreground: Paint()
+                                  ..style = PaintingStyle.stroke
+                                  ..strokeWidth = 4
+                                  ..color = Colors.black,
+                                fontSize: 20.0,
+                                fontFamily: 'Ubuntu',
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                            Text(
+                              "Welcome,",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20.0,
+                                fontFamily: 'Ubuntu',
+                                fontWeight: FontWeight.w300,
+                              ),
+                            ),
+                          ],
                         ),
-                        Text(
-                          "Aditya Chaudhary",
-                          style: TextStyle(
-                            textBaseline: TextBaseline.alphabetic,
-                            fontSize: 25.0,
-                            fontFamily: 'Ubuntu',
-                            fontWeight: FontWeight.w900,
+                        Stack(children: [
+                          Text(
+                            "Aditya Chaudhary",
+                            style: TextStyle(
+                              foreground: Paint()
+                                ..style = PaintingStyle.stroke
+                                ..strokeWidth = 4
+                                ..color = Colors.black,
+                              textBaseline: TextBaseline.alphabetic,
+                              fontSize: 25.0,
+                              fontFamily: 'Ubuntu',
+                              fontWeight: FontWeight.w900,
+                            ),
                           ),
-                        ),
+                          Text(
+                            "Aditya Chaudhary",
+                            style: TextStyle(
+                              color: Colors.white,
+                              textBaseline: TextBaseline.alphabetic,
+                              fontSize: 25.0,
+                              fontFamily: 'Ubuntu',
+                              fontWeight: FontWeight.w900,
+                            ),
+                          ),
+                        ]),
                       ],
                     ),
                     CircleAvatar(
@@ -194,14 +226,30 @@ class MyApp extends StatelessWidget {
               ),
               Container(
                 alignment: Alignment.center,
-                child: Text(
-                  'My Subjects',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: SizeConfig.blockSizeVertical * 3.0,
-                    fontFamily: 'Ubuntu',
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: Stack(
+                  children: [
+                    Text(
+                      'My Subjects',
+                      style: TextStyle(
+                        foreground: Paint()
+                          ..style = PaintingStyle.stroke
+                          ..strokeWidth = 4
+                          ..color = Colors.black,
+                        fontSize: SizeConfig.blockSizeVertical * 3.0,
+                        fontFamily: 'Ubuntu',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      'My Subjects',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: SizeConfig.blockSizeVertical * 3.0,
+                        fontFamily: 'Ubuntu',
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
               ),
               SizedBox(

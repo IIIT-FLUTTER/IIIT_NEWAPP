@@ -119,7 +119,7 @@ class LoginPage extends StatelessWidget {
                       Center(
                         child: RaisedButton(
                           elevation: 6.0,
-                          color: Colors.blueAccent,
+                          color: Color(0xFF76A3E7),
                           child: Text(
                             "LogIn",
                             style: TextStyle(
