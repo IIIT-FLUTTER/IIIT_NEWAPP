@@ -13,8 +13,8 @@ class TextMain extends StatefulWidget {
   final TextInputType input;
   final String label;
 
-  TextMain(this.controller, this.obscure, this.color, this.fw, this.fontsize,
-      this.prefix, this.suffix, this.hint, this.input, this.label);
+  TextMain({this.controller, this.obscure, this.color, this.fw, this.fontsize,
+      this.prefix, this.suffix, this.hint, this.input, this.label});
 
   @override
   _TextMainState createState() => _TextMainState();

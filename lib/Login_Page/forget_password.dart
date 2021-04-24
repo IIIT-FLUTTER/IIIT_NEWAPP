@@ -18,7 +18,7 @@ class Forget_Password extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          generateBluredImage(),
+          generateBlurredImage(),
           Container(
             alignment: Alignment.topCenter,
             child: Padding(
@@ -30,30 +30,32 @@ class Forget_Password extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   TextMain(
-                      controllerRoll,
-                      false,
-                      Colors.black,
-                      FontWeight.bold,
-                      15.0,
-                      Icons.assignment_ind,
-                      null,
-                      "Enter your Roll no",
-                      TextInputType.number,
-                      "Roll No"),
+                    controller: controllerRoll,
+                    obscure: false,
+                    color: Colors.black,
+                    fw: FontWeight.bold,
+                    fontsize: 15.0,
+                    prefix: Icons.assignment_ind,
+                    suffix: null,
+                    hint: "Enter your Roll no",
+                    input: TextInputType.number,
+                    label: "Roll No",
+                  ),
                   SizedBox(
                     height: 9.0,
                   ),
                   TextMain(
-                      controllerName,
-                      false,
-                      Colors.black,
-                      FontWeight.bold,
-                      15.0,
-                      Icons.account_circle,
-                      null,
-                      "Enter your name",
-                      TextInputType.name,
-                      "Student's Name"),
+                    controller: controllerName,
+                    obscure: false,
+                    color: Colors.black,
+                    fw: FontWeight.bold,
+                    fontsize: 15.0,
+                    prefix: Icons.account_circle,
+                    suffix: null,
+                    hint: "Enter your name",
+                    input: TextInputType.name,
+                    label: "Student's Name",
+                  ),
                   SizedBox(
                     height: 10.0,
                   ),
@@ -114,7 +116,7 @@ class Forget_Password extends StatelessWidget {
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          generateBluredImage(),
+          generateBlurredImage(),
           Container(
             child: Padding(
               padding: const EdgeInsets.only(
@@ -125,16 +127,17 @@ class Forget_Password extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   TextMain(
-                      controllerPhone,
-                      false,
-                      Colors.black,
-                      FontWeight.bold,
-                      15.0,
-                      Icons.phone,
-                      null,
-                      "Enter your Registered Phone number",
-                      TextInputType.number,
-                      "Mobile Number"),
+                    controller: controllerPhone,
+                    obscure: false,
+                    color: Colors.black,
+                    fw: FontWeight.bold,
+                    fontsize: 15.0,
+                    prefix: Icons.phone,
+                    suffix: null,
+                    hint: "Enter your Registered Phone number",
+                    input: TextInputType.number,
+                    label: "Mobile Number",
+                  ),
                   SizedBox(
                     height: 10.0,
                   ),
@@ -190,7 +193,7 @@ class Forget_Password extends StatelessWidget {
     );
   }
 
-  Widget generateBluredImage() {
+  Widget generateBlurredImage() {
     return new Container(
       decoration: new BoxDecoration(
         image: new DecorationImage(
@@ -198,7 +201,7 @@ class Forget_Password extends StatelessWidget {
           fit: BoxFit.cover,
         ),
       ),
-      //I blured the parent container to blur background image, you can get rid of this part
+      //I blurred the parent container to blur background image, you can get rid of this part
       child: new BackdropFilter(
         filter: new ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
         child: new Container(
