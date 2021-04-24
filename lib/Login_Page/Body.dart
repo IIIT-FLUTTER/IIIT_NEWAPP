@@ -12,6 +12,7 @@ class LoginPage extends StatelessWidget {
   final TextEditingController phoneController = new TextEditingController();
   final TextEditingController nameController = new TextEditingController();
   final TextEditingController rollController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -96,16 +97,17 @@ class LoginPage extends StatelessWidget {
                                 height: 9.0,
                               ),
                               TextMain(
-                                  passwordController,
-                                  true,
-                                  Colors.black,
-                                  FontWeight.bold,
-                                  15.0,
-                                  Icons.lock_outline_rounded,
-                                  Icons.visibility,
-                                  "Enter your password",
-                                  null,
-                                  "Password"),
+                                passwordController,
+                                true,
+                                Colors.black,
+                                FontWeight.bold,
+                                15.0,
+                                Icons.lock_outline_rounded,
+                                Icons.visibility,
+                                "Enter your password",
+                                null,
+                                "Password",
+                              ),
                             ],
                           ),
                         ),

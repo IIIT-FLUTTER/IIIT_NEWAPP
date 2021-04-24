@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-class TextMain extends StatelessWidget {
+class TextMain extends StatefulWidget {
+  bool isObscure = true;
   final TextEditingController controller;
   final bool obscure;
   final Color color;
@@ -16,18 +17,23 @@ class TextMain extends StatelessWidget {
       this.prefix, this.suffix, this.hint, this.input, this.label);
 
   @override
+  _TextMainState createState() => _TextMainState();
+}
+
+class _TextMainState extends State<TextMain> {
+  @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: controller,
-      obscureText: obscure,
+      controller: widget.controller,
+      obscureText: (widget.obscure==true)?widget.isObscure:!widget.isObscure,
       style: TextStyle(
-        color: color,
-        fontWeight: fw,
-        fontSize: fontsize,
+        color: widget.color,
+        fontWeight: widget.fw,
+        fontSize: widget.fontsize,
         fontFamily: "MonoLisa",
       ),
       decoration: InputDecoration(
-        labelText: label,
+        labelText: widget.label,
         labelStyle: TextStyle(
           fontFamily: 'Questrial',
           fontSize: 17.0,
@@ -57,18 +63,25 @@ class TextMain extends StatelessWidget {
             style: BorderStyle.solid,
           ),
         ),
-        hintText: hint,
+        hintText: widget.hint,
         filled: true,
         fillColor: Colors.blue.shade50,
         prefixIcon: Icon(
-          prefix,
+          widget.prefix,
           size: 25.0,
           color: Colors.blueAccent,
         ),
-        suffixIcon: Icon(
-          suffix,
-          size: 25.0,
-          color: Colors.blueAccent,
+        suffixIcon: IconButton(
+          onPressed: (){
+            setState(() {
+              widget.isObscure = !widget.isObscure;
+            });
+          },
+          icon: Icon(
+            widget.suffix,
+            size: 25.0,
+            color: Colors.blueAccent,
+          ),
         ),
         hintStyle: TextStyle(
           color: Colors.grey,
