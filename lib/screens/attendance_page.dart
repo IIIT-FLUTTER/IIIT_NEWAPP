@@ -4,12 +4,21 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class AttendancePage extends StatelessWidget {
-  final String attendanceText = 'Good Job You Are Safe.......!';
+  static const int maths_att = 7, maths_total = 10;
+  static const int dsa_att = 8, dsa_total = 10;
+  static const int comm_att = 5, comm_total = 10;
+  static const int ap_att = 4, ap_total = 10;
+  static const int wd_att = 8, wd_total = 10;
+  static const int de_att = 7, de_total = 10;
+  static int total = maths_total+dsa_total+comm_total+ap_total+wd_total+de_total;
+  static int attend = maths_att+wd_att+ap_att+comm_att+dsa_att+de_att;
+  final String attendanceTextSafe = 'Good Job You Are Safe.......!';
+  final String attendanceTextDanger = 'Oops You need to attend more classes.......!';
   final slider = CircularPercentIndicator(
     animation: true,
     radius: 180,
     lineWidth: 25.0,
-    percent: 0.8,
+    percent: attend/total,
     backgroundColor: Colors.pinkAccent,
     progressColor: Color(0xFF42f5c5),
     center: Center(
@@ -17,7 +26,7 @@ class AttendancePage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            '80%',
+            '${(attend/total)*100}%',
             style: TextStyle(
                 color: Colors.white, fontWeight: FontWeight.bold, fontSize: 36),
           ),
@@ -105,6 +114,14 @@ class AttendancePage extends StatelessWidget {
               ),
               Container(
                 decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black,
+                      blurRadius: 2.0,
+                      spreadRadius: 0.5,
+                      offset: Offset(2.5, 2.5),
+                    )
+                  ],
                   color: Color(0xFF1D2C4B),
                   borderRadius: BorderRadius.circular(25),
                 ),
@@ -161,7 +178,7 @@ class AttendancePage extends StatelessWidget {
                       height: 10,
                     ),
                     Text(
-                      attendanceText,
+                      (attend/total >= 0.75) ? attendanceTextSafe : attendanceTextDanger,
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
                           wordSpacing: 1.5,
@@ -190,7 +207,7 @@ class AttendancePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '100',
+                          '$total',
                           style: TextStyle(
                               letterSpacing: 1.5,
                               color: Colors.white,
@@ -215,7 +232,7 @@ class AttendancePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '80',
+                          '$attend',
                           style: TextStyle(
                               letterSpacing: 1.5,
                               color: Colors.white,
@@ -240,7 +257,7 @@ class AttendancePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          '20',
+                          '${total-attend}',
                           style: TextStyle(
                               letterSpacing: 1.5,
                               color: Colors.white,
@@ -282,47 +299,47 @@ class AttendancePage extends StatelessWidget {
               SubjectAttendanceWidget(
                 color: Colors.pink,
                 subject: 'Maths',
-                attended: 8,
-                totalclass: 10,
+                attended: maths_att,
+                totalclass: maths_total,
               ),
               SizedBox(
                 height: 15.0,
               ),
               SubjectAttendanceWidget(
-                  totalclass: 10,
-                  attended: 8,
+                  totalclass: comm_total,
+                  attended: comm_att,
                   subject: 'Communications',
                   color: Colors.green),
               SizedBox(
                 height: 15.0,
               ),
               SubjectAttendanceWidget(
-                  totalclass: 10,
-                  attended: 7,
+                  totalclass: wd_total,
+                  attended: wd_att,
                   subject: 'Web Design',
                   color: Colors.blue),
               SizedBox(
                 height: 15.0,
               ),
               SubjectAttendanceWidget(
-                  totalclass: 10,
-                  attended: 9,
+                  totalclass: dsa_total,
+                  attended: dsa_att,
                   subject: 'Data Structures',
                   color: Colors.yellow),
               SizedBox(
                 height: 15.0,
               ),
               SubjectAttendanceWidget(
-                  totalclass: 10,
-                  attended: 6,
-                  subject: 'Analog Electronics',
+                  totalclass: de_total,
+                  attended: de_att,
+                  subject: 'Digital Electronics',
                   color: Colors.cyan),
               SizedBox(
                 height: 15.0,
               ),
               SubjectAttendanceWidget(
-                  totalclass: 10,
-                  attended: 10,
+                  totalclass: ap_total,
+                  attended: ap_att,
                   subject: 'App Design',
                   color: Colors.red),
             ],
