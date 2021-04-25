@@ -10,8 +10,8 @@ class AttendancePage extends StatelessWidget {
     radius: 180,
     lineWidth: 25.0,
     percent: 0.8,
-    backgroundColor: Colors.red,
-    progressColor: Colors.green,
+    backgroundColor: Colors.pinkAccent,
+    progressColor: Color(0xFF42f5c5),
     center: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -123,7 +123,7 @@ class AttendancePage extends StatelessWidget {
                             Row(
                               children: [
                                 CircleAvatar(
-                                  backgroundColor: Colors.green,
+                                  backgroundColor: Color(0xFF42f5c5),
                                   radius: 14,
                                 ),
                                 Text(
@@ -141,7 +141,7 @@ class AttendancePage extends StatelessWidget {
                             Row(
                               children: [
                                 CircleAvatar(
-                                  backgroundColor: Colors.red,
+                                  backgroundColor: Colors.pinkAccent,
                                   radius: 14,
                                 ),
                                 Text(
