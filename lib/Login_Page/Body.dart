@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:iiit_skeleton/Login_Page/TextField.dart';
 import 'package:iiit_skeleton/Login_Page/forget_password.dart';
 import 'package:iiit_skeleton/screens/home_screen.dart';
+import 'package:flutter/src/material/button_style.dart';
 import 'dart:ui' as ui;
 
 class LoginPage extends StatelessWidget {
@@ -62,7 +63,7 @@ class LoginPage extends StatelessWidget {
                         "Sign In",
                         style: TextStyle(
                           fontSize: 25.0,
-                          color: Colors.white,
+                          color: Colors.black87,
                           fontWeight: FontWeight.w900,
                         ),
                       ),
@@ -89,7 +90,8 @@ class LoginPage extends StatelessWidget {
                                 fw: FontWeight.bold,
                                 fontsize: 15.0,
                                 prefix: Icons.mail_outline,
-                                suffix: null,
+                                suffix:null,
+
                                 hint: "name.rollno@iiitsonepat.ac.in",
                                 input: TextInputType.emailAddress,
                                 label: "Email Address",
@@ -114,66 +116,96 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        height: height / 15,
+                        height: height / 28,
                       ),
                       Center(
-                        child: RaisedButton(
-                          elevation: 6.0,
-                          color: Colors.blueAccent,
-                          child: Text(
-                            "LogIn",
-                            style: TextStyle(
-                              fontSize: 17.0,
-                              fontWeight: FontWeight.w900,
+                        child: ButtonTheme(
+                          minWidth: 250,
+                          height: 60,
+                          child: RaisedButton(
+                            elevation: 6.0,
+                            color: Colors.blueAccent,
+                            child: Text(
+                              "LogIn",
+                              style: TextStyle(
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w900,
+                              ),
                             ),
-                          ),
-                          shape: BeveledRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10.0),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(30.0),
                             ),
-                          ),
-                          onPressed: () {
-                            if (emailController.text.isEmpty ||
-                                passwordController.text.isEmpty) {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    // Retrieve the text the that user has entered by using the
-                                    // TextEditingController.
-                                    content: Text(
-                                      "Fill the Required Fields",
-                                      style: TextStyle(
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.w900,
-                                        color: Colors.black,
+                            onPressed: () {
+                              if (emailController.text.isEmpty ||
+                                  passwordController.text.isEmpty) {
+                                showDialog(
+                                  // barrierColor: Colors.white,
+                                  context: context,
+                                  builder: (context) {
+                                    return AlertDialog(
+                                      // Retrieve the text the that user has entered by using the
+                                      // TextEditingController.
+                                      content: Text(
+                                        "Fill the Required Fields",
+                                        style: TextStyle(
+                                          fontSize: 20.0,
+                                          fontWeight: FontWeight.w900,
+                                          color: Colors.black,
+                                        ),
                                       ),
-                                    ),
-                                    backgroundColor: Colors.white70,
-                                  );
-                                },
-                              );
-                            } else
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => HomeScreen(),
-                                ),
-                              );
-                          },
+
+                                      actions: <Widget>[
+                                        TextButton(
+                                          onPressed: () =>
+                                              Navigator.pop(context, 'Ok'),
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 120.0),
+                                            child: Text(
+                                              "Ok",
+                                              style: TextStyle(fontSize: 24.0,fontWeight: FontWeight.bold),
+                                            ),
+                                          ),
+                                          style: ButtonStyle(
+                                              elevation:
+                                                  MaterialStateProperty.all(
+                                                      0.0),
+                                              textStyle:
+                                                  MaterialStateProperty.all(
+                                                      TextStyle(
+                                                letterSpacing: 1.0,
+                                                fontFamily: "MonoLisa",
+                                              ))),
+                                        )
+                                      ],
+                                      backgroundColor: Colors.white,
+                                    );
+                                  },
+                                );
+                              } else
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => HomeScreen(),
+                                  ),
+                                );
+                            },
+                          ),
                         ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
+                            padding:
+                                const EdgeInsets.only(left: 10.0, top: 5.0),
                             child: InkWell(
                                 child: Text(
                                   "Forgot Password?",
                                   style: TextStyle(
                                     color: Colors.deepOrangeAccent,
                                     fontWeight: FontWeight.w900,
+                                    fontSize: 16.0,
                                   ),
                                 ),
                                 onTap: () {
@@ -206,16 +238,16 @@ class LoginPage extends StatelessWidget {
     return new Container(
       decoration: new BoxDecoration(
         image: new DecorationImage(
-          image: new AssetImage('images/hupe.gif'),
+          image: new AssetImage('images/Login_Page/gradiet.jpg'),
           fit: BoxFit.cover,
         ),
       ),
       //I blured the parent container to blur background image, you can get rid of this part
       child: new BackdropFilter(
-        filter: new ui.ImageFilter.blur(sigmaX: 3.0, sigmaY: 3.0),
+        filter: new ui.ImageFilter.blur(sigmaX: 0.0, sigmaY: 0.0),
         child: new Container(
           //you can change opacity with color here(I used black) for background.
-          decoration: new BoxDecoration(color: Colors.black.withOpacity(0.2)),
+          decoration: new BoxDecoration(color: Colors.black.withOpacity(0.0)),
         ),
       ),
     );

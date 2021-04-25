@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iiit_skeleton/Login_Page/Body.dart';
 import 'package:iiit_skeleton/models/constants.dart';
 import 'package:iiit_skeleton/screens/Faculty.dart';
 import 'package:iiit_skeleton/screens/attendance_page.dart';
@@ -83,6 +84,103 @@ class MyApp extends StatelessWidget {
                       builder: (context) => Meeting(),
                     ),
                   );
+                },
+              ),
+              ListTile(
+                title: Text('LogOut'),
+                onTap: () {
+                  showDialog(
+                    // barrierColor: Colors.white,
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        // Retrieve the text the that user has entered by using the
+                        // TextEditingController.
+                        content: Text(
+                          "Do you really want to log out?",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.black,
+                          ),
+                        ),
+
+                        actions: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              TextButton(
+                                onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LoginPage(),
+                                  ),
+                                ).then((value) {
+                                  if (value != null) {
+                                    final SnackBar snackbar = SnackBar(
+                                      content: Text(
+                                          "You have been successfully Logged Out"),
+                                      backgroundColor: Colors.lightGreenAccent,
+                                    );
+                                    _scaffoldKey.currentState
+                                        .showSnackBar(snackbar);
+                                  }
+                                }),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "Yes",
+                                    style: TextStyle(
+                                        fontSize: 24.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                style: ButtonStyle(
+                                  elevation: MaterialStateProperty.all(0.0),
+                                  textStyle: MaterialStateProperty.all(
+                                    TextStyle(
+                                      letterSpacing: 1.0,
+                                      fontFamily: "MonoLisa",
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 80.0,
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.pop(context, 'No'),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(right: 50.0),
+                                  child: Text(
+                                    "No",
+                                    style: TextStyle(
+                                        fontSize: 24.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                style: ButtonStyle(
+                                    elevation: MaterialStateProperty.all(0.0),
+                                    textStyle:
+                                        MaterialStateProperty.all(TextStyle(
+                                      letterSpacing: 1.0,
+                                      fontFamily: "MonoLisa",
+                                    ))),
+                              ),
+                            ],
+                          )
+                        ],
+                        backgroundColor: Colors.white,
+                      );
+                    },
+                  );
+
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => LoginPage(),
+                  //   ),
+                  // );
                 },
               ),
             ],

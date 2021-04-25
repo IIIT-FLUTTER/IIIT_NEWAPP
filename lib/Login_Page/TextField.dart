@@ -33,20 +33,20 @@ class _TextMainState extends State<TextMain> {
         fontFamily: "MonoLisa",
       ),
       decoration: InputDecoration(
-        labelText: widget.label,
-        labelStyle: TextStyle(
-          fontFamily: 'Questrial',
-          fontSize: 17.0,
-          letterSpacing: 1.5,
-          color: Colors.black,
-        ),
+        // labelText: widget.label,
+        // labelStyle: TextStyle(
+        //   fontFamily: 'Questrial',
+        //   fontSize: 20.0,
+        //   letterSpacing: 1.5,
+        //   color: Colors.black,
+        // ),
         border: const OutlineInputBorder(
           gapPadding: 10.0,
           borderRadius: BorderRadius.all(
             Radius.circular(30.0),
           ),
           borderSide: BorderSide(
-            color: Colors.purpleAccent,
+            // color: Colors.purpleAccent,
             width: 10.0,
             style: BorderStyle.solid,
           ),
@@ -58,7 +58,7 @@ class _TextMainState extends State<TextMain> {
             Radius.circular(30.0),
           ),
           borderSide: BorderSide(
-            color: Colors.purpleAccent,
+            // color: Colors.,
             width: 3.0,
             style: BorderStyle.solid,
           ),
@@ -71,14 +71,16 @@ class _TextMainState extends State<TextMain> {
           size: 25.0,
           color: Colors.blueAccent,
         ),
+
         suffixIcon: IconButton(
           onPressed: (){
             setState(() {
               widget.isObscure = !widget.isObscure;
             });
           },
-          icon: Icon(
-            widget.suffix,
+
+          icon: Icon(widget.isObscure&&widget.obscure?
+           Icons.visibility_off:widget.suffix,
             size: 25.0,
             color: Colors.blueAccent,
           ),

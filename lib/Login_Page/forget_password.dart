@@ -197,7 +197,7 @@ class Forget_Password extends StatelessWidget {
     return new Container(
       decoration: new BoxDecoration(
         image: new DecorationImage(
-          image: new AssetImage('images/Login_Page/Back.jpeg'),
+          image: new AssetImage('images/Login_Page/back-light.jpg'),
           fit: BoxFit.cover,
         ),
       ),
@@ -206,7 +206,7 @@ class Forget_Password extends StatelessWidget {
         filter: new ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
         child: new Container(
           //you can change opacity with color here(I used black) for background.
-          decoration: new BoxDecoration(color: Colors.black.withOpacity(0.2)),
+          decoration: new BoxDecoration(color: Colors.black.withOpacity(0.0)),
         ),
       ),
     );
