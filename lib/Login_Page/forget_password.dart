@@ -15,10 +15,11 @@ class Forget_Password extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orangeAccent,
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          generateBlurredImage(),
+          // generateBlurredImage(),
           Container(
             alignment: Alignment.topCenter,
             child: Padding(
@@ -113,10 +114,11 @@ class Forget_Password extends StatelessWidget {
 
   Scaffold col(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orangeAccent,
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          generateBlurredImage(),
+          // generateBlurredImage(),
           Container(
             child: Padding(
               padding: const EdgeInsets.only(
@@ -193,22 +195,22 @@ class Forget_Password extends StatelessWidget {
     );
   }
 
-  Widget generateBlurredImage() {
-    return new Container(
-      decoration: new BoxDecoration(
-        image: new DecorationImage(
-          image: new AssetImage('images/Login_Page/back-light.jpg'),
-          fit: BoxFit.cover,
-        ),
-      ),
-      //I blurred the parent container to blur background image, you can get rid of this part
-      child: new BackdropFilter(
-        filter: new ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-        child: new Container(
-          //you can change opacity with color here(I used black) for background.
-          decoration: new BoxDecoration(color: Colors.black.withOpacity(0.0)),
-        ),
-      ),
-    );
-  }
+  // Widget generateBlurredImage() {
+  //   return new Container(
+  //     decoration: new BoxDecoration(
+  //       image: new DecorationImage(
+  //         image: new AssetImage('images/Login_Page/back-light.jpg'),
+  //         fit: BoxFit.cover,
+  //       ),
+  //     ),
+  //     //I blurred the parent container to blur background image, you can get rid of this part
+  //     child: new BackdropFilter(
+  //       filter: new ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+  //       child: new Container(
+  //         //you can change opacity with color here(I used black) for background.
+  //         decoration: new BoxDecoration(color: Colors.black.withOpacity(0.0)),
+  //       ),
+  //     ),
+  //   );
+  // }
 }
