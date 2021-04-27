@@ -1,20 +1,38 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:iiit_skeleton/Faculty/facultyIcon.dart';
 
 class FacultyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Members"),
-      ),
-      body: SafeArea(
+      body: Center(
         child: Container(
-          child: Center(
-            child: Text(
-              'Faculty',
-              style: TextStyle(
-                fontSize: 40.0,
-                fontWeight: FontWeight.bold,
+          color: Color(0xFF333366),
+          child: Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(
+                children: [
+                  FacultyLeft(
+                    image: "images/backs.jpg",
+                  ),
+                  FacultyRight(
+                    image: "images/backs.jpg",
+                  ),
+                  FacultyLeft(
+                    image: "images/backs.jpg",
+                  ),
+                  FacultyRight(
+                    image: "images/backs.jpg",
+                  ),
+                  FacultyLeft(
+                    image: "images/backs.jpg",
+                  ),
+                  FacultyRight(
+                    image: "images/backs.jpg",
+                  ),
+                ],
               ),
             ),
           ),
