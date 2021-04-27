@@ -28,7 +28,7 @@ class second extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
-                    color: Colors.orangeAccent,
+                    color: Color(0xFFFFB900),
                     elevation: 10,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,

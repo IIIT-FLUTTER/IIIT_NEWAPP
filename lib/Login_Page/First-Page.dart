@@ -19,7 +19,7 @@ class first extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: RaisedButton(
-                  color: Colors.orange,
+                  color: Color(0xFFFFB900),
                     child: Icon(Icons.navigate_next),
                     onPressed: () {
                       Navigator.push(
