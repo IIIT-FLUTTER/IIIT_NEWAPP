@@ -45,31 +45,31 @@ class _TextMainState extends State<TextMain> {
           borderRadius: BorderRadius.all(
             Radius.circular(30.0),
           ),
-          borderSide: BorderSide(
-            // color: Colors.purpleAccent,
-            width: 10.0,
-            style: BorderStyle.solid,
-          ),
+          // borderSide: BorderSide(
+          //   // color: Colors.purpleAccent,
+          //   // width: 10.0,
+          //   style: BorderStyle.none,
+          // ),
         ),
 
         focusedBorder: const OutlineInputBorder(
-          gapPadding: 10.0,
+          // gapPadding: 10.0,
           borderRadius: BorderRadius.all(
             Radius.circular(30.0),
           ),
-          borderSide: BorderSide(
-            // color: Colors.,
-            width: 3.0,
-            style: BorderStyle.solid,
-          ),
+          // borderSide: BorderSide(
+          //   // color: Colors.,
+          //   width: 1.3,
+          //   style: BorderStyle.none,
+          // ),
         ),
         hintText: widget.hint,
         filled: true,
-        fillColor: Colors.blue.shade50,
+        fillColor: Colors.grey.shade200,
         prefixIcon: Icon(
           widget.prefix,
           size: 25.0,
-          color: Colors.blueAccent,
+          color: Colors.black,
         ),
 
         suffixIcon: IconButton(
@@ -87,7 +87,7 @@ class _TextMainState extends State<TextMain> {
         ),
         hintStyle: TextStyle(
           color: Colors.grey,
-          fontSize: 16.0,
+          fontSize: 12.0,
           fontWeight: FontWeight.w900,
           fontStyle: FontStyle.italic,
           fontFamily: "MonoLisa",

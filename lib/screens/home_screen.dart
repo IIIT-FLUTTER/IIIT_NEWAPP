@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iiit_skeleton/Login_Page/Body.dart';
+import 'package:iiit_skeleton/Login_Page/Second_Page.dart';
 import 'package:iiit_skeleton/models/constants.dart';
 import 'package:iiit_skeleton/screens/Faculty.dart';
 import 'package:iiit_skeleton/screens/attendance_page.dart';
@@ -99,7 +100,7 @@ class MyApp extends StatelessWidget {
                         content: Text(
                           "Do you really want to log out?",
                           style: TextStyle(
-                            fontSize: 20.0,
+                            fontSize: 15.0,
                             fontWeight: FontWeight.w900,
                             color: Colors.black,
                           ),
@@ -109,11 +110,11 @@ class MyApp extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              TextButton(
+                              FlatButton(
                                 onPressed: () => Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => LoginPage(),
+                                    builder: (context) => second(),
                                   ),
                                 ).then((value) {
                                   if (value != null) {
@@ -131,41 +132,41 @@ class MyApp extends StatelessWidget {
                                   child: Text(
                                     "Yes",
                                     style: TextStyle(
-                                        fontSize: 24.0,
+                                        fontSize: 15.0,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
-                                style: ButtonStyle(
-                                  elevation: MaterialStateProperty.all(0.0),
-                                  textStyle: MaterialStateProperty.all(
-                                    TextStyle(
-                                      letterSpacing: 1.0,
-                                      fontFamily: "MonoLisa",
-                                    ),
-                                  ),
-                                ),
+                                // style: ButtonStyle(
+                                //   elevation: MaterialStateProperty.all(0.0),
+                                //   textStyle: MaterialStateProperty.all(
+                                //     TextStyle(
+                                //       letterSpacing: 1.0,
+                                //       fontFamily: "MonoLisa",
+                                //     ),
+                                //   ),
+                                // ),
                               ),
                               SizedBox(
                                 width: 80.0,
                               ),
-                              TextButton(
+                              FlatButton(
                                 onPressed: () => Navigator.pop(context, 'No'),
                                 child: Padding(
                                   padding: const EdgeInsets.only(right: 50.0),
                                   child: Text(
                                     "No",
                                     style: TextStyle(
-                                        fontSize: 24.0,
+                                        fontSize: 15.0,
                                         fontWeight: FontWeight.bold),
                                   ),
                                 ),
-                                style: ButtonStyle(
-                                    elevation: MaterialStateProperty.all(0.0),
-                                    textStyle:
-                                        MaterialStateProperty.all(TextStyle(
-                                      letterSpacing: 1.0,
-                                      fontFamily: "MonoLisa",
-                                    ))),
+                                // style: ButtonStyle(
+                                //     elevation: MaterialStateProperty.all(0.0),
+                                //     textStyle:
+                                //         MaterialStateProperty.all(TextStyle(
+                                //       letterSpacing: 1.0,
+                                //       fontFamily: "MonoLisa",
+                                //     ))),
                               ),
                             ],
                           )

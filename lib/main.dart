@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iiit_skeleton/Login_Page/First-Page.dart';
 import 'Login_Page/Body.dart';
 
 final ThemeData _appTheme = _buildAppTheme();
@@ -29,6 +30,6 @@ void main() {
   runApp(MaterialApp(
     // theme: _appTheme,
     // debugShowCheckedModeBanner: false,
-    home: LoginPage(),
+    home: first(),
   ));
 }
