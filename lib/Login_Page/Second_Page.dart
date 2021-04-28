@@ -13,10 +13,12 @@ class second extends StatelessWidget {
             Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top: 50.0, left: 100.0),
-                  child: Image.asset(
-                    "images/Login_Page/IIIT Sonepat Logo.png",
-                    fit: BoxFit.cover,
+                  padding: const EdgeInsets.only(top:80.0),
+                  child: Center(
+                    child: Image.asset(
+                      "images/Login_Page/IIIT Sonepat Logo.png",
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 Container(

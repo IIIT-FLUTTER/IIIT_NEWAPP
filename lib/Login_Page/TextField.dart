@@ -30,7 +30,7 @@ class _TextMainState extends State<TextMain> {
         color: widget.color,
         fontWeight: widget.fw,
         fontSize: widget.fontsize,
-        fontFamily: "MonoLisa",
+        fontFamily: "Ubuntu",
       ),
       decoration: InputDecoration(
         // labelText: widget.label,
@@ -89,8 +89,8 @@ class _TextMainState extends State<TextMain> {
           color: Colors.grey,
           fontSize: 12.0,
           fontWeight: FontWeight.w900,
-          fontStyle: FontStyle.italic,
-          fontFamily: "MonoLisa",
+          fontStyle: FontStyle.normal,
+          fontFamily: "Ubuntu",
         ),
       ),
     );
