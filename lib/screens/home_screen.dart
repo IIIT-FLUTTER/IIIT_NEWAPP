@@ -4,6 +4,7 @@ import 'package:iiit_skeleton/Login_Page/Body.dart';
 import 'package:iiit_skeleton/Login_Page/Second_Page.dart';
 import 'package:iiit_skeleton/models/constants.dart';
 import 'package:iiit_skeleton/screens/Faculty.dart';
+import 'package:iiit_skeleton/screens/Socials.dart';
 import 'package:iiit_skeleton/screens/attendance_page.dart';
 import 'package:iiit_skeleton/screens/meet.dart';
 import 'package:iiit_skeleton/screens/news.dart';
@@ -33,158 +34,267 @@ class MyApp extends StatelessWidget {
         key: _scaffoldKey,
         backgroundColor: Color(0xFFF4F9F9),
         drawer: Drawer(
-          child: ListView(
-            children: [
-              DrawerHeader(
-                child: Center(
-                  child: Text('IIIT SONEPAT'),
+          child: Material(
+            color: Colors.amber[500],
+            child: ListView(
+              children: [
+                DrawerHeader(
+                  padding: EdgeInsets.symmetric(vertical: 50),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    image: DecorationImage(
+                      image: NetworkImage(
+                          'https://upload.wikimedia.org/wikipedia/en/0/00/Indian_Institute_of_Information_Technology%2C_Sonepat_logo.png',
+                          scale: 0.2),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
                 ),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
+                const SizedBox(
+                  height: 15,
                 ),
-              ),
-              ListTile(
-                title: Text('About'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AboutPage(),
-                    ),
-                  );
-                },
-              ),
-              ListTile(
-                title: Text('Attendance'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => AttendancePage(),
-                    ),
-                  );
-                },
-              ),
-              ListTile(
-                title: Text('Faculty'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => FacultyPage(),
-                    ),
-                  );
-                },
-              ),
-              ListTile(
-                title: Text('Meeting'),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Meeting(),
-                    ),
-                  );
-                },
-              ),
-              ListTile(
-                title: Text('LogOut'),
-                onTap: () {
-                  showDialog(
-                    // barrierColor: Colors.white,
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        // Retrieve the text the that user has entered by using the
-                        // TextEditingController.
-                        content: Text(
-                          "Do you really want to log out?",
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w900,
-                            color: Colors.black,
+                ListTile(
+                  tileColor: Colors.black87,
+                  leading: Icon(
+                    Icons.info,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'About',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AboutPage(),
+                      ),
+                    );
+                  },
+                ),
+                ListTile(
+                  tileColor: Colors.black87,
+                  leading: Icon(
+                    Icons.assignment_ind_rounded,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'Attendance',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AttendancePage(),
+                      ),
+                    );
+                  },
+                ),
+                ListTile(
+                  tileColor: Colors.black87,
+                  leading: Icon(
+                    Icons.work,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'Faculty',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FacultyPage(),
+                      ),
+                    );
+                  },
+                ),
+                ListTile(
+                  tileColor: Colors.black87,
+                  leading: Icon(
+                    Icons.call,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'Meeting',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Meeting(),
+                      ),
+                    );
+                  },
+                ),
+                ListTile(
+                  tileColor: Colors.black87,
+                  leading: Icon(
+                    Icons.article,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'News',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LatestNewsPage(),
+                      ),
+                    );
+                  },
+                ),
+                ListTile(
+                  tileColor: Colors.black87,
+                  leading: Icon(
+                    Icons.camera,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'Socials',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SocialsPage(),
+                      ),
+                    );
+                  },
+                ),
+                ListTile(
+                  tileColor: Colors.black87,
+                  leading: Icon(
+                    Icons.star,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'Rate Us',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => AboutPage(),
+                      ),
+                    );
+                  },
+                ),
+                Spacer(),
+                ListTile(
+                  tileColor: Colors.black87,
+                  leading: Icon(
+                    Icons.logout,
+                    color: Colors.white,
+                  ),
+                  title: Text(
+                    'LogOut',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  onTap: () {
+                    showDialog(
+                      // barrierColor: Colors.white,
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          // Retrieve the text the that user has entered by using the
+                          // TextEditingController.
+                          content: Text(
+                            "Do you really want to log out?",
+                            style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w900,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
 
-                        actions: <Widget>[
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              FlatButton(
-                                onPressed: () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => second(),
+                          actions: <Widget>[
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: <Widget>[
+                                FlatButton(
+                                  onPressed: () => Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => second(),
+                                    ),
+                                  ).then((value) {
+                                    if (value != null) {
+                                      final SnackBar snackbar = SnackBar(
+                                        content: Text(
+                                            "You have been successfully Logged Out"),
+                                        backgroundColor:
+                                            Colors.lightGreenAccent,
+                                      );
+                                      _scaffoldKey.currentState
+                                          .showSnackBar(snackbar);
+                                    }
+                                  }),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Text(
+                                      "Yes",
+                                      style: TextStyle(
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
-                                ).then((value) {
-                                  if (value != null) {
-                                    final SnackBar snackbar = SnackBar(
-                                      content: Text(
-                                          "You have been successfully Logged Out"),
-                                      backgroundColor: Colors.lightGreenAccent,
-                                    );
-                                    _scaffoldKey.currentState
-                                        .showSnackBar(snackbar);
-                                  }
-                                }),
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    "Yes",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.bold),
-                                  ),
+                                  // style: ButtonStyle(
+                                  //   elevation: MaterialStateProperty.all(0.0),
+                                  //   textStyle: MaterialStateProperty.all(
+                                  //     TextStyle(
+                                  //       letterSpacing: 1.0,
+                                  //       fontFamily: "MonoLisa",
+                                  //     ),
+                                  //   ),
+                                  // ),
                                 ),
-                                // style: ButtonStyle(
-                                //   elevation: MaterialStateProperty.all(0.0),
-                                //   textStyle: MaterialStateProperty.all(
-                                //     TextStyle(
-                                //       letterSpacing: 1.0,
-                                //       fontFamily: "MonoLisa",
-                                //     ),
-                                //   ),
-                                // ),
-                              ),
-                              SizedBox(
-                                width: 80.0,
-                              ),
-                              FlatButton(
-                                onPressed: () => Navigator.pop(context, 'No'),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(right: 50.0),
-                                  child: Text(
-                                    "No",
-                                    style: TextStyle(
-                                        fontSize: 15.0,
-                                        fontWeight: FontWeight.bold),
-                                  ),
+                                SizedBox(
+                                  width: 80.0,
                                 ),
-                                // style: ButtonStyle(
-                                //     elevation: MaterialStateProperty.all(0.0),
-                                //     textStyle:
-                                //         MaterialStateProperty.all(TextStyle(
-                                //       letterSpacing: 1.0,
-                                //       fontFamily: "MonoLisa",
-                                //     ))),
-                              ),
-                            ],
-                          )
-                        ],
-                        backgroundColor: Colors.white,
-                      );
-                    },
-                  );
+                                FlatButton(
+                                  onPressed: () => Navigator.pop(context, 'No'),
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(right: 50.0),
+                                    child: Text(
+                                      "No",
+                                      style: TextStyle(
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  // style: ButtonStyle(
+                                  //     elevation: MaterialStateProperty.all(0.0),
+                                  //     textStyle:
+                                  //         MaterialStateProperty.all(TextStyle(
+                                  //       letterSpacing: 1.0,
+                                  //       fontFamily: "MonoLisa",
+                                  //     ))),
+                                ),
+                              ],
+                            )
+                          ],
+                          backgroundColor: Colors.white,
+                        );
+                      },
+                    );
 
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(
-                  //     builder: (context) => LoginPage(),
-                  //   ),
-                  // );
-                },
-              ),
-            ],
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => LoginPage(),
+                    //   ),
+                    // );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
         body: Container(
@@ -205,7 +315,7 @@ class MyApp extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                        icon: Icon(Icons.sort),
+                        icon: Icon(Icons.menu),
                         onPressed: () {
                           _scaffoldKey.currentState.openDrawer();
                         }),
