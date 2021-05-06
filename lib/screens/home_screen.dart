@@ -1,17 +1,15 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:iiit_skeleton/Login_Page/Body.dart';
-import 'package:iiit_skeleton/Login_Page/Second_Page.dart';
 import 'package:iiit_skeleton/models/constants.dart';
 import 'package:iiit_skeleton/screens/Faculty.dart';
-import 'package:iiit_skeleton/screens/Socials.dart';
 import 'package:iiit_skeleton/screens/attendance_page.dart';
 import 'package:iiit_skeleton/screens/meet.dart';
 import 'package:iiit_skeleton/screens/news.dart';
 import 'package:iiit_skeleton/widgets/subjectIcon.dart';
 import 'about_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:iiit_skeleton/widgets/slider.dart';
+import 'package:iiit_skeleton/homepage/subjectsSlides.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -23,446 +21,349 @@ class HomeScreen extends StatelessWidget {
 }
 
 class MyApp extends StatelessWidget {
+  String userName = "Aditya Chaudhary";
+  String yearOfStudent = "First";
+  String greetingMessage() {
+    var timeNow = DateTime.now().hour;
+
+    if (timeNow <= 12) {
+      return 'Good Morning';
+    } else if ((timeNow > 12) && (timeNow <= 16)) {
+      return 'Good Afternoon';
+    } else {
+      return 'Good Evening';
+    }
+  }
+
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
   @override
   Widget build(BuildContext context) {
+    String greeting = greetingMessage();
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
         key: _scaffoldKey,
-        backgroundColor: Color(0xFFF4F9F9),
         drawer: Drawer(
-          child: Material(
-            color: Colors.amber[500],
-            child: ListView(
-              children: [
-                DrawerHeader(
-                  padding: EdgeInsets.symmetric(vertical: 50),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    image: DecorationImage(
-                      image: NetworkImage(
-                          'https://upload.wikimedia.org/wikipedia/en/0/00/Indian_Institute_of_Information_Technology%2C_Sonepat_logo.png',
-                          scale: 0.2),
-                      fit: BoxFit.fill,
+          child: ListView(
+            children: [
+              DrawerHeader(
+                child: Center(
+                  child: Text('IIIT SONEPAT'),
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                ),
+              ),
+              ListTile(
+                title: Text('About'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AboutPage(),
                     ),
-                  ),
-                ),
-                const SizedBox(
-                  height: 15,
-                ),
-                ListTile(
-                  tileColor: Colors.black87,
-                  leading: Icon(
-                    Icons.info,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'About',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AboutPage(),
-                      ),
-                    );
-                  },
-                ),
-                ListTile(
-                  tileColor: Colors.black87,
-                  leading: Icon(
-                    Icons.assignment_ind_rounded,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'Attendance',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AttendancePage(),
-                      ),
-                    );
-                  },
-                ),
-                ListTile(
-                  tileColor: Colors.black87,
-                  leading: Icon(
-                    Icons.work,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'Faculty',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => FacultyPage(),
-                      ),
-                    );
-                  },
-                ),
-                ListTile(
-                  tileColor: Colors.black87,
-                  leading: Icon(
-                    Icons.call,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'Meeting',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => Meeting(),
-                      ),
-                    );
-                  },
-                ),
-                ListTile(
-                  tileColor: Colors.black87,
-                  leading: Icon(
-                    Icons.article,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'News',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LatestNewsPage(),
-                      ),
-                    );
-                  },
-                ),
-                ListTile(
-                  tileColor: Colors.black87,
-                  leading: Icon(
-                    Icons.camera,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'Socials',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => SocialsPage(),
-                      ),
-                    );
-                  },
-                ),
-                ListTile(
-                  tileColor: Colors.black87,
-                  leading: Icon(
-                    Icons.star,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'Rate Us',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AboutPage(),
-                      ),
-                    );
-                  },
-                ),
-                Spacer(),
-                ListTile(
-                  tileColor: Colors.black87,
-                  leading: Icon(
-                    Icons.logout,
-                    color: Colors.white,
-                  ),
-                  title: Text(
-                    'LogOut',
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  onTap: () {
-                    showDialog(
-                      // barrierColor: Colors.white,
-                      context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          // Retrieve the text the that user has entered by using the
-                          // TextEditingController.
-                          content: Text(
-                            "Do you really want to log out?",
-                            style: TextStyle(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w900,
-                              color: Colors.black,
-                            ),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Attendance'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => AttendancePage(),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Faculty'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FacultyPage(),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('Meeting'),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => Meeting(),
+                    ),
+                  );
+                },
+              ),
+              ListTile(
+                title: Text('LogOut'),
+                onTap: () {
+                  showDialog(
+                    // barrierColor: Colors.white,
+                    context: context,
+                    builder: (context) {
+                      return AlertDialog(
+                        // Retrieve the text the that user has entered by using the
+                        // TextEditingController.
+                        content: Text(
+                          "Do you really want to log out?",
+                          style: TextStyle(
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w900,
+                            color: Colors.black,
                           ),
+                        ),
 
-                          actions: <Widget>[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: <Widget>[
-                                FlatButton(
-                                  onPressed: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => second(),
-                                    ),
-                                  ).then((value) {
-                                    if (value != null) {
-                                      final SnackBar snackbar = SnackBar(
-                                        content: Text(
-                                            "You have been successfully Logged Out"),
-                                        backgroundColor:
-                                            Colors.lightGreenAccent,
-                                      );
-                                      _scaffoldKey.currentState
-                                          .showSnackBar(snackbar);
-                                    }
-                                  }),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      "Yes",
-                                      style: TextStyle(
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.bold),
+                        actions: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              TextButton(
+                                onPressed: () => Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LoginPage(),
+                                  ),
+                                ).then((value) {
+                                  if (value != null) {
+                                    final SnackBar snackbar = SnackBar(
+                                      content: Text(
+                                          "You have been successfully Logged Out"),
+                                      backgroundColor: Colors.lightGreenAccent,
+                                    );
+                                    _scaffoldKey.currentState
+                                        .showSnackBar(snackbar);
+                                  }
+                                }),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text(
+                                    "Yes",
+                                    style: TextStyle(
+                                        fontSize: 24.0,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ),
+                                style: ButtonStyle(
+                                  elevation: MaterialStateProperty.all(0.0),
+                                  textStyle: MaterialStateProperty.all(
+                                    TextStyle(
+                                      letterSpacing: 1.0,
+                                      fontFamily: "MonoLisa",
                                     ),
                                   ),
-                                  // style: ButtonStyle(
-                                  //   elevation: MaterialStateProperty.all(0.0),
-                                  //   textStyle: MaterialStateProperty.all(
-                                  //     TextStyle(
-                                  //       letterSpacing: 1.0,
-                                  //       fontFamily: "MonoLisa",
-                                  //     ),
-                                  //   ),
-                                  // ),
                                 ),
-                                SizedBox(
-                                  width: 80.0,
-                                ),
-                                FlatButton(
-                                  onPressed: () => Navigator.pop(context, 'No'),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(right: 50.0),
-                                    child: Text(
-                                      "No",
-                                      style: TextStyle(
-                                          fontSize: 15.0,
-                                          fontWeight: FontWeight.bold),
-                                    ),
+                              ),
+                              SizedBox(
+                                width: 80.0,
+                              ),
+                              TextButton(
+                                onPressed: () => Navigator.pop(context, 'No'),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(right: 50.0),
+                                  child: Text(
+                                    "No",
+                                    style: TextStyle(
+                                        fontSize: 24.0,
+                                        fontWeight: FontWeight.bold),
                                   ),
-                                  // style: ButtonStyle(
-                                  //     elevation: MaterialStateProperty.all(0.0),
-                                  //     textStyle:
-                                  //         MaterialStateProperty.all(TextStyle(
-                                  //       letterSpacing: 1.0,
-                                  //       fontFamily: "MonoLisa",
-                                  //     ))),
                                 ),
-                              ],
-                            )
-                          ],
-                          backgroundColor: Colors.white,
-                        );
-                      },
-                    );
+                                style: ButtonStyle(
+                                    elevation: MaterialStateProperty.all(0.0),
+                                    textStyle:
+                                        MaterialStateProperty.all(TextStyle(
+                                      letterSpacing: 1.0,
+                                      fontFamily: "MonoLisa",
+                                    ))),
+                              ),
+                            ],
+                          )
+                        ],
+                        backgroundColor: Colors.white,
+                      );
+                    },
+                  );
 
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => LoginPage(),
-                    //   ),
-                    // );
-                  },
-                ),
-              ],
-            ),
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => LoginPage(),
+                  //   ),
+                  // );
+                },
+              ),
+            ],
           ),
         ),
         body: Container(
-          // decoration: BoxDecoration(
-          //   image: DecorationImage(
-          //     image: AssetImage("images/newback.jpg"),
-          //     fit: BoxFit.cover,
-          //     colorFilter: ColorFilter.mode(
-          //         Colors.transparent.withOpacity(0.3), BlendMode.srcOver),
-          //   ),
-          // ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                margin: EdgeInsets.only(top: 5.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    IconButton(
-                        icon: Icon(Icons.menu),
-                        onPressed: () {
-                          _scaffoldKey.currentState.openDrawer();
-                        }),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+              Stack(
+                children: [
+                  Image.asset("images/header.png"),
+                  Positioned(
+                    child: Container(
+                      width: width,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          IconButton(
+                              color: Colors.white,
+                              icon: Icon(Icons.sort),
+                              onPressed: () {
+                                _scaffoldKey.currentState.openDrawer();
+                              }),
+                          Column(
+                            children: [
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    height: height / 40,
+                                  ),
+                                  Text(
+                                    "$greeting",
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 35.0,
+                                      fontFamily: 'Questrial',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                          CircleAvatar(
+                            radius: 25.0,
+                            backgroundImage: AssetImage('images/aditya.png'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    child: Column(
                       children: [
                         SizedBox(
-                          height: SizeConfig.blockSizeVertical * 2.0,
+                          height: 70.0,
                         ),
-                        Text(
-                          "Welcome,",
-                          style: TextStyle(
-                            fontSize: 20.0,
-                            fontFamily: 'Ubuntu',
-                            fontWeight: FontWeight.w300,
-                          ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: width / 20,
+                            ),
+                            Text(
+                              "$userName",
+                              style: TextStyle(
+                                color: Colors.white,
+                                textBaseline: TextBaseline.alphabetic,
+                                fontSize: 25.0,
+                                fontFamily: 'Questrial',
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ],
                         ),
-                        Text(
-                          "Aditya Chaudhary",
-                          style: TextStyle(
-                            textBaseline: TextBaseline.alphabetic,
-                            fontSize: 25.0,
-                            fontFamily: 'Ubuntu',
-                            fontWeight: FontWeight.w900,
-                          ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: width / 20,
+                            ),
+                            Text(
+                              "$yearOfStudent year",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20.0,
+                                fontFamily: 'Questrial',
+                              ),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                    CircleAvatar(
-                      radius: 30.0,
-                      backgroundImage: AssetImage('images/1.png'),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: SizeConfig.blockSizeVertical * 4.0,
-              ),
-              Container(
-                height: SizeConfig.blockSizeVertical * 28.0,
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 2.0,
-                    ),
-                    CarouselSlider(
-                      items: [
-                        CarouselChild(
-                          address: 'images/b.png',
-                          onPress: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => LatestNewsPage(),
-                              ),
-                            );
-                          },
-                        ),
-                        CarouselChild(
-                          address: 'images/c.png',
-                          onPress: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => AboutPage(),
-                              ),
-                            );
-                          },
-                        ),
-                        CarouselChild(
-                          address: 'images/d.jpg',
-                          onPress: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => FacultyPage(),
-                              ),
-                            );
-                          },
-                        ),
-                      ],
-                      options: CarouselOptions(
-                        autoPlay: true,
-                        autoPlayInterval: Duration(seconds: 2),
-                        enlargeCenterPage: true,
-                        height: SizeConfig.blockSizeVertical * 27.0,
-                        aspectRatio: 16 / 9,
-                        enableInfiniteScroll: true,
-                        viewportFraction: 0.8,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: SizeConfig.blockSizeVertical * 3.9,
-              ),
-              Container(
-                alignment: Alignment.center,
-                child: Text(
-                  'My Subjects',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: SizeConfig.blockSizeVertical * 3.0,
-                    fontFamily: 'Ubuntu',
-                    fontWeight: FontWeight.bold,
                   ),
-                ),
+                  Positioned(
+                    bottom: height / 15,
+                    left: width / 20,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return AttendancePage();
+                            },
+                          ),
+                        );
+                      },
+                      child: CircleAvatar(
+                        radius: 30.0,
+                        backgroundImage: AssetImage('images/attendance.jpg'),
+                      ),
+                    ),
+                  )
+                ],
               ),
-              SizedBox(
-                height: SizeConfig.blockSizeVertical * 2.5,
-              ),
-              Container(
-                height: SizeConfig.blockSizeVertical * 43.0,
-                child: GridView.count(
-                  primary: false,
-                  childAspectRatio: width / (height / 2),
-                  crossAxisCount: 3,
-                  mainAxisSpacing: 10,
-                  children: <Widget>[
-                    Subject(
-                      address: 'images/m.png',
-                      subjectName: 'Mathematics',
+              Expanded(
+                child: ListView(
+                  children: [
+                    SubjectButton(
+                      height: height,
+                      width: width,
+                      subject: "Communication Skills",
+                      color1: Colors.deepPurple,
+                      color2: Colors.lightBlueAccent,
+                      address: "images/cs.png",
                     ),
-                    Subject(
-                      address: 'images/wd.png',
-                      subjectName: 'Web Designing',
+                    SubjectButton(
+                      height: height,
+                      width: width,
+                      subject: "Data Structures",
+                      color1: Colors.black,
+                      color2: Colors.black12,
+                      address: "images/ds.png",
                     ),
-                    Subject(
-                      address: 'images/cs.png',
-                      subjectName: 'Communication Skills',
+                    SubjectButton(
+                      height: height,
+                      width: width,
+                      subject: "Web Designing",
+                      color1: Colors.lightBlueAccent,
+                      color2: Colors.lightGreen,
+                      address: "images/wd.png",
                     ),
-                    Subject(
-                      address: 'images/ds.png',
-                      subjectName: 'Data Structure',
+                    SubjectButton(
+                      height: height,
+                      width: width,
+                      subject: "Mathematics",
+                      color1: Colors.red,
+                      color2: Colors.yellow,
+                      address: "images/mathFinal.jpg",
                     ),
-                    Subject(
-                      address: 'images/de.png',
-                      subjectName: 'Digital Electronics',
+                    SubjectButton(
+                      height: height,
+                      width: width,
+                      subject: "Application Programming",
+                      color1: Color(0xFFFC7170),
+                      color2: Color(0xFFEFB8B0),
+                      address: "images/ad.png",
                     ),
-                    Subject(
-                      address: 'images/ad.png',
-                      subjectName: 'Application Programming',
+                    SubjectButton(
+                      height: height,
+                      width: width,
+                      subject: "Digital Electronics",
+                      address: "images/de.png",
+                      color1: Colors.yellow,
+                      color2: Colors.orange,
                     ),
                   ],
                 ),
-              )
+              ),
             ],
           ),
         ),
