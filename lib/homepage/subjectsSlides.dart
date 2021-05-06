@@ -41,13 +41,13 @@ class SubjectButton extends StatelessWidget {
                 Text(
                   "$subject",
                   style: TextStyle(
-                      fontSize: 28.0,
+                      fontSize: 25.0,
                       color: Colors.white,
                       fontFamily: 'Questrial'),
                 ),
                 CircleAvatar(
                   backgroundImage: AssetImage("$address"),
-                  radius: 40.0,
+                  radius: 30.0,
                 ),
               ],
             ),
