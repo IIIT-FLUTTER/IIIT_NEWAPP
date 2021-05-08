@@ -58,6 +58,7 @@ class _MyAppState extends State<MyApp> {
     String greeting = greetingMessage();
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+
     SizeConfig().init(context);
     return AnimatedContainer(
       decoration: BoxDecoration(
@@ -100,67 +101,64 @@ class _MyAppState extends State<MyApp> {
                         Positioned(
                           child: Container(
                             width: width,
-                            child: Expanded(
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  isDrawerOpen
-                                      ? IconButton(
-                                          icon: Icon(
-                                            Icons.arrow_back,
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                isDrawerOpen
+                                    ? IconButton(
+                                        icon: Icon(
+                                          Icons.arrow_back,
+                                          color: Colors.white,
+                                        ),
+                                        onPressed: () {
+                                          setState(() {
+                                            xOffset = 0;
+                                            yOffset = 0;
+                                            scalefactor = 1;
+                                            isDrawerOpen = false;
+                                          });
+                                        })
+                                    : IconButton(
+                                        icon: Icon(
+                                          Icons.menu,
+                                          color: Colors.white,
+                                        ),
+                                        onPressed: () {
+                                          setState(() {
+                                            xOffset = 180;
+                                            yOffset = 70;
+                                            scalefactor = 0.8;
+                                            isDrawerOpen = true;
+                                          });
+                                          _scaffoldKey.currentState
+                                              .openDrawer();
+                                        }),
+                                Column(
+                                  children: [
+                                    Column(
+                                      children: [
+                                        SizedBox(
+                                          height: height / 40,
+                                        ),
+                                        Text(
+                                          "$greeting",
+                                          style: TextStyle(
                                             color: Colors.white,
+                                            fontSize: 35.0,
+                                            fontFamily: 'Questrial',
                                           ),
-                                          onPressed: () {
-                                            setState(() {
-                                              xOffset = 0;
-                                              yOffset = 0;
-                                              scalefactor = 1;
-                                              isDrawerOpen = false;
-                                            });
-                                          })
-                                      : IconButton(
-                                          icon: Icon(
-                                            Icons.menu,
-                                            color: Colors.white,
-                                          ),
-                                          onPressed: () {
-                                            setState(() {
-                                              xOffset = 180;
-                                              yOffset = 70;
-                                              scalefactor = 0.8;
-                                              isDrawerOpen = true;
-                                            });
-                                            _scaffoldKey.currentState
-                                                .openDrawer();
-                                          }),
-                                  Column(
-                                    children: [
-                                      Column(
-                                        children: [
-                                          SizedBox(
-                                            height: height / 40,
-                                          ),
-                                          Text(
-                                            "$greeting",
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 35.0,
-                                              fontFamily: 'Questrial',
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  CircleAvatar(
-                                    radius: 25.0,
-                                    backgroundImage:
-                                        AssetImage('images/aditya.png'),
-                                  ),
-                                ],
-                              ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                                CircleAvatar(
+                                  radius: 25.0,
+                                  backgroundImage:
+                                      AssetImage('images/aditya.png'),
+                                ),
+                              ],
                             ),
                           ),
                         ),
