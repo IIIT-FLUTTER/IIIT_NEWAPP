@@ -63,10 +63,13 @@ class _MyAppState extends State<MyApp> {
     return AnimatedContainer(
       decoration: BoxDecoration(
         color: Colors.white,
+<<<<<<< HEAD
         // borderRadius: BorderRadius.only(
         //   topLeft: Radius.circular(40),
         //   bottomLeft: Radius.circular(40),
         // ),
+=======
+>>>>>>> 26820665d60de706f5529f089efb5cc7074bca77
         boxShadow: [
           //BoxShadow
           BoxShadow(
