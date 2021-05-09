@@ -52,7 +52,7 @@ void main() {
         // backGroundColor: Color(0xfffc6042),
         animationEffect: 'zoom-in',
         logoSize: 200,
-        home: HomeScreen(),
+        home: second(),
         customFunction: duringSplash,
         duration: 4000,
         type: CustomSplashType.StaticDuration,
