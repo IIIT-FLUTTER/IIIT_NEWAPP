@@ -28,12 +28,12 @@ class AttendancePage extends StatelessWidget {
           Text(
             '${(attend/total)*100}%',
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 36),
+                color: Colors.black, fontWeight: FontWeight.bold, fontSize: 36),
           ),
           Text(
             'Present',
             style: TextStyle(
-                color: Colors.white, fontSize: 24, fontWeight: FontWeight.w200),
+                color: Colors.black, fontSize: 24, fontWeight: FontWeight.w200),
           ),
         ],
       ),
@@ -43,7 +43,7 @@ class AttendancePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF081631),
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Color(0XFF081631),
         backwardsCompatibility: true,
@@ -59,7 +59,7 @@ class AttendancePage extends StatelessWidget {
               Text(
                 'Friday',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 16,
                     letterSpacing: 2,
                     fontWeight: FontWeight.w300),
@@ -68,6 +68,7 @@ class AttendancePage extends StatelessWidget {
                 text: TextSpan(
                   text: '16',
                   style: TextStyle(
+                    color: Colors.black,
                     letterSpacing: 0.5,
                     fontSize: 44,
                     fontWeight: FontWeight.bold,
@@ -94,7 +95,7 @@ class AttendancePage extends StatelessWidget {
                 ),
               ),
               Divider(
-                color: Colors.white,
+                color: Colors.black,
                 thickness: 1.5,
               ),
               SizedBox(
@@ -103,7 +104,7 @@ class AttendancePage extends StatelessWidget {
               Text(
                 'Overall Attendance',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 24,
                     letterSpacing: 2.5,
                     wordSpacing: 1.5,
@@ -116,13 +117,13 @@ class AttendancePage extends StatelessWidget {
                 decoration: BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black,
+                      // color: Colors.black,
                       blurRadius: 2.0,
                       spreadRadius: 0.5,
-                      offset: Offset(2.5, 2.5),
+                      // offset: Offset(2.5, 2.5),
                     )
                   ],
-                  color: Color(0xFF1D2C4B),
+                  color: Color.fromRGBO(214, 230, 253, 1),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Column(
@@ -146,7 +147,7 @@ class AttendancePage extends StatelessWidget {
                                 Text(
                                   'Attended',
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 20,
                                       letterSpacing: 1.5),
                                 ),
@@ -164,7 +165,7 @@ class AttendancePage extends StatelessWidget {
                                 Text(
                                   'Skipped',
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 20,
                                       letterSpacing: 1.5),
                                 ),
@@ -182,7 +183,7 @@ class AttendancePage extends StatelessWidget {
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
                           wordSpacing: 1.5,
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 20),
                     ),
                     SizedBox(
@@ -197,7 +198,7 @@ class AttendancePage extends StatelessWidget {
               Container(
                 height: 70,
                 decoration: BoxDecoration(
-                  border: Border.all(color: Color(0xFF1D2C4B), width: 2.5),
+                  border: Border.all(color: Color.fromRGBO(214,230,253,1), width: 2.5),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: Row(
@@ -210,21 +211,21 @@ class AttendancePage extends StatelessWidget {
                           '$total',
                           style: TextStyle(
                               letterSpacing: 1.5,
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 24,
                               fontWeight: FontWeight.w900),
                         ),
                         Text(
                           'Total',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.w200),
                         ),
                       ],
                     ),
                     VerticalDivider(
-                      color: Colors.white,
+                      color: Colors.black,
                       indent: 8,
                       endIndent: 8,
                     ),
@@ -235,21 +236,21 @@ class AttendancePage extends StatelessWidget {
                           '$attend',
                           style: TextStyle(
                               letterSpacing: 1.5,
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 24,
                               fontWeight: FontWeight.w900),
                         ),
                         Text(
                           'Attended',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.w200),
                         ),
                       ],
                     ),
                     VerticalDivider(
-                      color: Colors.white,
+                      color: Colors.black,
                       indent: 8,
                       endIndent: 8,
                     ),
@@ -260,14 +261,14 @@ class AttendancePage extends StatelessWidget {
                           '${total-attend}',
                           style: TextStyle(
                               letterSpacing: 1.5,
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 24,
                               fontWeight: FontWeight.w900),
                         ),
                         Text(
                           'Skipped',
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 16,
                               fontWeight: FontWeight.w200),
                         ),
@@ -280,7 +281,7 @@ class AttendancePage extends StatelessWidget {
                 height: 15,
               ),
               Divider(
-                color: Colors.white,
+                color: Colors.black,
                 thickness: 1.5,
               ),
               SizedBox(
@@ -289,7 +290,7 @@ class AttendancePage extends StatelessWidget {
               Text(
                 'Subjects',
                 style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 24,
                     letterSpacing: 2.5,
                     wordSpacing: 1.5,
@@ -353,9 +354,9 @@ class AttendancePage extends StatelessWidget {
 class SubjectAttendanceWidget extends StatelessWidget {
   SubjectAttendanceWidget(
       {@required this.totalclass,
-      @required this.attended,
-      @required this.subject,
-      @required this.color});
+        @required this.attended,
+        @required this.subject,
+        @required this.color});
   final String subject;
   // ignore: non_constant_identifier_names
   final int totalclass;
@@ -367,7 +368,7 @@ class SubjectAttendanceWidget extends StatelessWidget {
     return Container(
       height: 80,
       decoration: BoxDecoration(
-        color: Color(0xFF1D2C4B),
+        color: Colors.white,
         borderRadius: BorderRadius.all(Radius.elliptical(25, 20)),
       ),
       child: Column(
@@ -382,7 +383,7 @@ class SubjectAttendanceWidget extends StatelessWidget {
               Text(
                 subject,
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.black,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   letterSpacing: 1.5,
@@ -405,7 +406,7 @@ class SubjectAttendanceWidget extends StatelessWidget {
           Text(
             'You have attended $attended out of $totalclass classes',
             style:
-                TextStyle(color: Colors.white, fontSize: 16, wordSpacing: 1.5),
+            TextStyle(color: Colors.black, fontSize: 16, wordSpacing: 1.5),
           )
         ],
       ),
