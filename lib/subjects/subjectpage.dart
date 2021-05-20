@@ -4,12 +4,10 @@ import 'package:native_pdf_view/native_pdf_view.dart';
 
 class SubjectPage extends StatelessWidget {
   SubjectPage({this.initialPage, this.subjectName, this.imagePath, this.quote});
-
   final int initialPage;
   final String subjectName;
   final String imagePath;
   final String quote;
-
   @override
   Widget build(BuildContext context) {
     final pdfController = PdfController(
@@ -95,4 +93,3 @@ class SubjectPage extends StatelessWidget {
     );
   }
 }
-

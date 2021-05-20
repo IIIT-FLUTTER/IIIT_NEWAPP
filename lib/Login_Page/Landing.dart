@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:iiit_skeleton/Login_Page/Third_Page.dart';
+import 'package:iiit_skeleton/Login_Page/Auth.dart';
 
-class second extends StatelessWidget {
+class Landing extends StatefulWidget {
+  @override
+  _LandingState createState() => _LandingState();
+}
+
+class _LandingState extends State<Landing> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -13,22 +18,24 @@ class second extends StatelessWidget {
             Stack(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(top:80.0),
+                  padding: const EdgeInsets.only(top: 80.0),
                   child: Center(
                     child: Image.asset(
-                      "images/Login_Page/IIIT Sonepat Logo.png",
+                      "images/Login_Page/logo.png",
+                      width: 250,
+                      height: 250,
                       fit: BoxFit.cover,
                     ),
                   ),
                 ),
                 Container(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height / 2.3,
+                  height: MediaQuery.of(context).size.height / 2.05,
                   margin: EdgeInsets.only(
                       top: MediaQuery.of(context).size.height / 2),
                   child: Card(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15.0),
+                      borderRadius: BorderRadius.circular(35.0),
                     ),
                     color: Color(0xFFFFB900),
                     elevation: 10,
@@ -71,7 +78,7 @@ class second extends StatelessWidget {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => third(),
+                                          builder: (context) => Auth(),
                                         ),
                                       );
                                     }),

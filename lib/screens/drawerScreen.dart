@@ -1,8 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:iiit_skeleton/Login_Page/Body.dart';
-import 'package:iiit_skeleton/Login_Page/Second_Page.dart';
+import 'package:iiit_skeleton/Login_Page/Auth.dart';
+
+
 import 'package:iiit_skeleton/screens/Faculty.dart';
 import 'package:iiit_skeleton/screens/Socials.dart';
 import 'package:iiit_skeleton/screens/attendance_page.dart';
@@ -276,7 +277,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                                         onPressed: () => Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => second(),
+                                            builder: (context) => Auth(),
                                           ),
                                         ).then((value) {
                                           if (value != null) {
@@ -347,7 +348,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginPage(),
+                              builder: (context) => Auth(),
                             ),
                           );
                         },
