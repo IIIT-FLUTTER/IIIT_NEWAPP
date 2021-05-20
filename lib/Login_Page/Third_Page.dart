@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iiit_skeleton/Login_Page/Second_Page.dart';
 import 'package:iiit_skeleton/screens/home_screen.dart';
+import 'package:iiit_skeleton/subjects/subjectpage.dart';
 
 import 'TextField.dart';
 import 'forget_password.dart';
@@ -253,7 +254,7 @@ class third extends StatelessWidget {
                                                 context,
                                                 MaterialPageRoute(
                                                   builder: (context) =>
-                                                      HomeScreen(),
+                                                      HomeScreen()
                                                 ),
                                               );
                                           }),

@@ -5,6 +5,7 @@ import 'package:iiit_skeleton/homepage/subjectsSlides.dart';
 import 'package:iiit_skeleton/models/constants.dart';
 import 'package:iiit_skeleton/screens/attendance_page.dart';
 import 'package:iiit_skeleton/screens/drawerScreen.dart';
+import 'package:iiit_skeleton/subjects/subjectpage.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -274,6 +275,12 @@ class _MyAppState extends State<MyApp> {
                     ),
                   ),
                   SubjectButton(
+                    navigateTo: SubjectPage(
+                      initialPage: 20,
+                      subjectName: 'Communication Skills',
+                      imagePath: "images/communication_skill.webp",
+                      quote: "Maths is the language in which god has written the universe.",
+                    ),
                     height: height,
                     width: width,
                     subject: "Communication Skills",
@@ -282,6 +289,12 @@ class _MyAppState extends State<MyApp> {
                     address: "images/cs.png",
                   ),
                   SubjectButton(
+                    navigateTo: SubjectPage(
+                      initialPage: 19,
+                      subjectName: 'Data Structures',
+                      imagePath: "images/dsa.webp",
+                      quote: "Maths is the language in which god has written the universe.",
+                    ),
                     height: height,
                     width: width,
                     subject: "Data Structures",
@@ -290,6 +303,12 @@ class _MyAppState extends State<MyApp> {
                     address: "images/ds.png",
                   ),
                   SubjectButton(
+                    navigateTo: SubjectPage(
+                      initialPage: 21,
+                      subjectName: 'Web Designing',
+                      imagePath: "images/web_design.webp",
+                      quote: "Maths is the language in which god has written the universe.",
+                    ),
                     height: height,
                     width: width,
                     subject: "Web Designing",
@@ -298,6 +317,12 @@ class _MyAppState extends State<MyApp> {
                     address: "images/wd.png",
                   ),
                   SubjectButton(
+                    navigateTo: SubjectPage(
+                      initialPage: 17,
+                      subjectName: 'Mathematics',
+                      imagePath: "images/maths.png",
+                      quote: "Maths is the language in which god has written the universe.",
+                    ),
                     height: height,
                     width: width,
                     subject: "Mathematics",
@@ -306,6 +331,12 @@ class _MyAppState extends State<MyApp> {
                     address: "images/mathFinal.jpg",
                   ),
                   SubjectButton(
+                    navigateTo: SubjectPage(
+                      initialPage: 22,
+                      subjectName: 'Application Programming',
+                      imagePath: "images/application_dev.jpeg",
+                      quote: "Maths is the language in which god has written the universe.",
+                    ),
                     height: height,
                     width: width,
                     subject: "Application Programming",
@@ -314,6 +345,12 @@ class _MyAppState extends State<MyApp> {
                     address: "images/ad.png",
                   ),
                   SubjectButton(
+                    navigateTo: SubjectPage(
+                      initialPage: 18,
+                      subjectName: 'Digital Electronics',
+                      imagePath: "images/dig_elec.gif",
+                      quote: "Maths is the language in which god has written the universe.",
+                    ),
                     height: height,
                     width: width,
                     subject: "Digital Electronics",
