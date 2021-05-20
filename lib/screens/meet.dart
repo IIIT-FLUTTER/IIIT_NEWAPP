@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:iiit_skeleton/Login_Page/TextField.dart';
+import 'package:iiit_skeleton/Login_Page/AuthTextField.dart';
 import 'package:iiit_skeleton/screens/home_screen.dart';
 
 
