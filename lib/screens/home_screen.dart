@@ -129,237 +129,235 @@ class _MyAppState extends State<MyApp> {
         ..scale(scalefactor)
         ..rotateY(isDrawerOpen ? -0.5 : 0),
       duration: Duration(milliseconds: 200),
-      child: SafeArea(
-        child: Scaffold(
-          key: _scaffoldKey,
-          body: Container(
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: height / 2.3,
-                    child: Stack(
-                      children: [
-                        SvgPicture.asset(
-                          'images/flutter.svg',
-                          alignment: Alignment.topCenter,
-                        ),
-                        Positioned(
-                          child: Container(
-                            width: width,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                isDrawerOpen
-                                    ? IconButton(
-                                        icon: Icon(
-                                          Icons.arrow_back,
-                                          color: Colors.white,
-                                        ),
-                                        onPressed: () {
-                                          setState(() {
-                                            xOffset = 0;
-                                            yOffset = 0;
-                                            scalefactor = 1;
-                                            isDrawerOpen = false;
-                                          });
-                                        })
-                                    : IconButton(
-                                        icon: Icon(
-                                          Icons.menu,
-                                          color: Colors.white,
-                                        ),
-                                        onPressed: () {
-                                          setState(() {
-                                            xOffset = 180;
-                                            yOffset = 70;
-                                            scalefactor = 0.8;
-                                            isDrawerOpen = true;
-                                          });
-                                          _scaffoldKey.currentState
-                                              .openDrawer();
-                                        }),
-                                Column(
-                                  children: [
-                                    Column(
-                                      children: [
-                                        SizedBox(
-                                          height: height / 40,
-                                        ),
-                                        Text(
-                                          "$greeting",
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 35.0,
-                                            fontFamily: 'Questrial',
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                                CircleAvatar(
-                                  radius: 25.0,
-                                  backgroundImage:
-                                      AssetImage('images/aditya.png'),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Container(
-                          child: Column(
+      child: Scaffold(
+        key: _scaffoldKey,
+        body: Container(
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  height: height / 2.3,
+                  child: Stack(
+                    children: [
+                      SvgPicture.asset(
+                        'images/flutter.svg',
+                        alignment: Alignment.topCenter,
+                      ),
+                      Positioned(
+                        child: Container(
+                          width: width,
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              SizedBox(
-                                height: 70.0,
-                              ),
-                              Row(
+                              isDrawerOpen
+                                  ? IconButton(
+                                      icon: Icon(
+                                        Icons.arrow_back,
+                                        color: Colors.white,
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          xOffset = 0;
+                                          yOffset = 0;
+                                          scalefactor = 1;
+                                          isDrawerOpen = false;
+                                        });
+                                      })
+                                  : IconButton(
+                                      icon: Icon(
+                                        Icons.menu,
+                                        color: Colors.white,
+                                      ),
+                                      onPressed: () {
+                                        setState(() {
+                                          xOffset = 180;
+                                          yOffset = 70;
+                                          scalefactor = 0.8;
+                                          isDrawerOpen = true;
+                                        });
+                                        _scaffoldKey.currentState
+                                            .openDrawer();
+                                      }),
+                              Column(
                                 children: [
-                                  SizedBox(
-                                    width: width / 20,
-                                  ),
-                                  Text(
-                                    "$userName",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      textBaseline: TextBaseline.alphabetic,
-                                      fontSize: 25.0,
-                                      fontFamily: 'Questrial',
-                                      fontWeight: FontWeight.w900,
-                                    ),
+                                  Column(
+                                    children: [
+                                      SizedBox(
+                                        height: height / 40,
+                                      ),
+                                      Text(
+                                        "$greeting",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 35.0,
+                                          fontFamily: 'Questrial',
+                                        ),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: width / 20,
-                                  ),
-                                  Text(
-                                    "$yearOfStudent year",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20.0,
-                                      fontFamily: 'Questrial',
-                                    ),
-                                  ),
-                                ],
+                              CircleAvatar(
+                                radius: 25.0,
+                                backgroundImage:
+                                    AssetImage('images/aditya.png'),
                               ),
                             ],
                           ),
                         ),
-                        Positioned(
-                          top: height / 4,
-                          left: width / 25,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) {
-                                    return AttendancePage();
-                                  },
-                                ),
-                              );
-                            },
-                            child: CircleAvatar(
-                              radius: 30.0,
-                              backgroundImage:
-                                  AssetImage('images/attendance.jpg'),
+                      ),
+                      Container(
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 70.0,
                             ),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width: width / 20,
+                                ),
+                                Text(
+                                  "$userName",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    textBaseline: TextBaseline.alphabetic,
+                                    fontSize: 25.0,
+                                    fontFamily: 'Questrial',
+                                    fontWeight: FontWeight.w900,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                SizedBox(
+                                  width: width / 20,
+                                ),
+                                Text(
+                                  "$yearOfStudent year",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                    fontFamily: 'Questrial',
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        top: height / 4,
+                        left: width / 25,
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return AttendancePage();
+                                },
+                              ),
+                            );
+                          },
+                          child: CircleAvatar(
+                            radius: 30.0,
+                            backgroundImage:
+                                AssetImage('images/attendance.jpg'),
                           ),
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
-                  SubjectButton(
-                    navigateTo: SubjectPage(
-                      initialPage: 20,
-                      subjectName: 'Communication Skills',
-                      imagePath: "images/communication_skill.webp",
-                      quote: "Maths is the language in which god has written the universe.",
-                    ),
-                    height: height,
-                    width: width,
-                    subject: "Communication Skills",
-                    color1: Colors.deepPurple,
-                    color2: Colors.lightBlueAccent,
-                    address: "images/cs.png",
+                ),
+                SubjectButton(
+                  navigateTo: SubjectPage(
+                    initialPage: 20,
+                    subjectName: 'Communication Skills',
+                    imagePath: "images/communication_skill.webp",
+                    quote: "Maths is the language in which god has written the universe.",
                   ),
-                  SubjectButton(
-                    navigateTo: SubjectPage(
-                      initialPage: 19,
-                      subjectName: 'Data Structures',
-                      imagePath: "images/dsa.webp",
-                      quote: "Maths is the language in which god has written the universe.",
-                    ),
-                    height: height,
-                    width: width,
-                    subject: "Data Structures",
-                    color1: Colors.black,
-                    color2: Colors.black12,
-                    address: "images/ds.png",
+                  height: height,
+                  width: width,
+                  subject: "Communication Skills",
+                  color1: Colors.deepPurple,
+                  color2: Colors.lightBlueAccent,
+                  address: "images/cs.png",
+                ),
+                SubjectButton(
+                  navigateTo: SubjectPage(
+                    initialPage: 19,
+                    subjectName: 'Data Structures',
+                    imagePath: "images/dsa.webp",
+                    quote: "Maths is the language in which god has written the universe.",
                   ),
-                  SubjectButton(
-                    navigateTo: SubjectPage(
-                      initialPage: 21,
-                      subjectName: 'Web Designing',
-                      imagePath: "images/web_design.webp",
-                      quote: "Maths is the language in which god has written the universe.",
-                    ),
-                    height: height,
-                    width: width,
-                    subject: "Web Designing",
-                    color1: Colors.lightBlueAccent,
-                    color2: Colors.lightGreen,
-                    address: "images/wd.png",
+                  height: height,
+                  width: width,
+                  subject: "Data Structures",
+                  color1: Colors.black,
+                  color2: Colors.black12,
+                  address: "images/ds.png",
+                ),
+                SubjectButton(
+                  navigateTo: SubjectPage(
+                    initialPage: 21,
+                    subjectName: 'Web Designing',
+                    imagePath: "images/web_design.webp",
+                    quote: "Maths is the language in which god has written the universe.",
                   ),
-                  SubjectButton(
-                    navigateTo: SubjectPage(
-                      initialPage: 17,
-                      subjectName: 'Mathematics',
-                      imagePath: "images/maths.png",
-                      quote: "Maths is the language in which god has written the universe.",
-                    ),
-                    height: height,
-                    width: width,
-                    subject: "Mathematics",
-                    color1: Colors.red,
-                    color2: Colors.yellow,
-                    address: "images/mathFinal.jpg",
+                  height: height,
+                  width: width,
+                  subject: "Web Designing",
+                  color1: Colors.lightBlueAccent,
+                  color2: Colors.lightGreen,
+                  address: "images/wd.png",
+                ),
+                SubjectButton(
+                  navigateTo: SubjectPage(
+                    initialPage: 17,
+                    subjectName: 'Mathematics',
+                    imagePath: "images/maths.png",
+                    quote: "Maths is the language in which god has written the universe.",
                   ),
-                  SubjectButton(
-                    navigateTo: SubjectPage(
-                      initialPage: 22,
-                      subjectName: 'Application Programming',
-                      imagePath: "images/application_dev.jpeg",
-                      quote: "Maths is the language in which god has written the universe.",
-                    ),
-                    height: height,
-                    width: width,
-                    subject: "Application Programming",
-                    color1: Color(0xFFFC7170),
-                    color2: Color(0xFFEFB8B0),
-                    address: "images/ad.png",
+                  height: height,
+                  width: width,
+                  subject: "Mathematics",
+                  color1: Colors.red,
+                  color2: Colors.yellow,
+                  address: "images/mathFinal.jpg",
+                ),
+                SubjectButton(
+                  navigateTo: SubjectPage(
+                    initialPage: 22,
+                    subjectName: 'Application Programming',
+                    imagePath: "images/application_dev.jpeg",
+                    quote: "Maths is the language in which god has written the universe.",
                   ),
-                  SubjectButton(
-                    navigateTo: SubjectPage(
-                      initialPage: 18,
-                      subjectName: 'Digital Electronics',
-                      imagePath: "images/dig_elec.gif",
-                      quote: "Maths is the language in which god has written the universe.",
-                    ),
-                    height: height,
-                    width: width,
-                    subject: "Digital Electronics",
-                    address: "images/de.png",
-                    color1: Colors.orange,
-                    color2: Colors.yellow,
+                  height: height,
+                  width: width,
+                  subject: "Application Programming",
+                  color1: Color(0xFFFC7170),
+                  color2: Color(0xFFEFB8B0),
+                  address: "images/ad.png",
+                ),
+                SubjectButton(
+                  navigateTo: SubjectPage(
+                    initialPage: 18,
+                    subjectName: 'Digital Electronics',
+                    imagePath: "images/dig_elec.gif",
+                    quote: "Maths is the language in which god has written the universe.",
                   ),
-                ],
-              ),
+                  height: height,
+                  width: width,
+                  subject: "Digital Electronics",
+                  address: "images/de.png",
+                  color1: Colors.orange,
+                  color2: Colors.yellow,
+                ),
+              ],
             ),
           ),
         ),
