@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:iiit_skeleton/Login_Page/Landing.dart';
-import 'package:iiit_skeleton/Login_Page/Auth.dart';
 import 'Login_Page/SplashScreen.dart';
 class MyApp extends StatelessWidget {
   Map<int, Widget> op = {1: Landing(), 2: Landing()};
